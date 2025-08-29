@@ -1,0 +1,161 @@
+/* Reset et base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  background-color: #121212;
+  color: #eaeaea;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Layout */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  padding: 40px 20px;
+}
+
+/* Header */
+header {
+  background: linear-gradient(135deg, #3a0ca3, #7209b7);
+  padding: 30px 0;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 3rem;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* Footer */
+footer {
+  background-color: #1e1e1e;
+  color: #999;
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: #d0d0d0;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+/* Sections */
+.section {
+  background: #1e1e1e;
+  margin: 20px auto;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 900px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.section:hover {
+  transform: translateY(-3px);
+}
+
+.section h2 {
+  font-size: 2rem;
+  color: #bb86fc;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.section p {
+  font-size: 1.1rem;
+  color: #ccc;
+  text-align: center;
+}
+
+/* Timeline */
+.timeline {
+  max-width: 800px;
+  margin: 40px auto;
+}
+
+.timeline-item {
+  background: #222;
+  padding: 20px;
+  border-left: 5px solid #bb86fc;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: background 0.3s, transform 0.3s;
+}
+
+.timeline-item:hover {
+  background: #3700b3;
+  transform: scale(1.02);
+}
+
+.timeline-item h3 {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.timeline-item p {
+  color: #aaa;
+}
+
+/* Bouton */
+button, #sendbutton {
+  background-color: #2a2a2a;
+  color: #ccc;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+button:hover, #sendbutton:hover {
+  background-color: #6200ee;
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  .section {
+    padding: 20px;
+  }
+
+  .timeline-item h3 {
+    font-size: 1.3rem;
+  }
+}

@@ -1,0 +1,360 @@
+/* Importation de la police Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Réinitialisation de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styles du corps (Body) */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+    min-height: 100vh;
+    color: #ffffff;
+    overflow-x: hidden;
+    max-width: 90%; /* Ajusté pour une meilleure lecture sur les grands écrans */
+    margin: 0 auto;
+    padding: 2rem 0; /* Ajout d'un peu de padding vertical */
+}
+
+/* En-tête */
+header {
+    text-align: center;
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+    background: linear-gradient(135deg, rgba(25, 25, 40, 0.4) 0%, rgba(16, 185, 129, 0.2) 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+header h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #a7e6ff, #87ceeb); /* Dégradé pour le titre */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+}
+
+/* Navigation */
+nav {
+    background: rgba(25, 25, 40, 0.6);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Pour la réactivité sur mobile */
+    gap: 1.5rem; /* Espacement entre les éléments de navigation */
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.8rem 1.2rem;
+    border-radius: 12px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    display: block; /* Pour s'assurer que le padding et la couleur de fond fonctionnent bien */
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.4s ease-in-out;
+    z-index: 0;
+}
+
+nav ul li a:hover {
+    color: #87ceeb; /* Couleur bleue claire au survol */
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+nav ul li a:hover::before {
+    left: 100%;
+}
+
+nav ul li a.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Conteneur principal et sections */
+main {
+    max-width: 1000px; /* Largeur maximale pour le contenu principal */
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+section {
+    background: rgba(25, 25, 40, 0.4);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden; /* Pour le pseudo-élément */
+}
+
+section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+}
+
+section h2 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #87ceeb; /* Couleur de titre de section */
+    text-align: center;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #87ceeb, transparent);
+    border-radius: 5px;
+}
+
+section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    color: #e0e0e0;
+}
+
+/* Styles spécifiques pour la section d'accueil (content) */
+#content h2 {
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, #3498db, #2ecc71); /* Dégradé pour le titre d'accueil */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    
+}
+
+/* Styles pour le bloc "Nouveau : Chatbot IA intégré !" */
+.chatbot-promo {
+    background: linear-gradient(45deg, #2c3e50, #3498db);
+    padding: 25px;
+    border-radius: 15px;
+    margin: 30px 0;
+    color: white;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    animation: fadeInScale 0.8s ease-out;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.chatbot-promo h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.chatbot-promo p {
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+    color: #f0f0f0;
+}
+
+.chatbot-promo a {
+    background: linear-gradient(90deg, #e74c3c, #c0392b);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 15px;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+}
+
+.chatbot-promo a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(231, 76, 60, 0.6);
+    filter: brightness(1.1);
+}
+
+/* Styles pour la section "Mes projets" */
+#projects .project-grid { /* Nouvelle classe pour la grille des projets */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin: 20px 0;
+    
+}
+
+.project-card {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.05); /* Fond légèrement transparent */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5), 0 0 0 3px rgba(135, 206, 235, 0.5); /* Effet de bordure au survol */
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: #a7e6ff; /* Couleur de titre de carte */
+}
+
+.project-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #c0c0c0;
+    margin-bottom: 1rem;
+}
+
+.project-card p strong {
+    color: #87ceeb;
+}
+
+.project-card a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block;
+    margin-top: 1rem;
+    transition: color 0.3s ease;
+}
+
+.project-card a:hover {
+    color: #66b3ff;
+    text-decoration: underline;
+}
+
+/* Pied de page (Footer) */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+    background: rgba(25, 25, 40, 0.6);
+    backdrop-filter: blur(15px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: #a0a0a0;
+}
+
+/* Réactivité */
+@media (max-width: 768px) {
+    body {
+        max-width: 95%;
+        padding: 1rem 0;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    nav ul li a {
+        padding: 0.6rem 1rem;
+    }
+
+    section {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    #content h2 {
+        font-size: 2rem;
+    }
+
+    .chatbot-promo {
+        padding: 20px;
+        margin: 20px 0;
+    }
+
+    .chatbot-promo h3 {
+        font-size: 1.5rem;
+    }
+
+    .chatbot-promo a {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    #projects .project-grid {
+        grid-template-columns: 1fr; /* Une colonne sur mobile */
+        gap: 1.5rem;
+    }
+
+    .project-card {
+        padding: 20px;
+    }
+}

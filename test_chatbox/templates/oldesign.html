@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat avec Mistral</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .chat-container {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .messages {
+            height: 400px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            background-color: #fafafa;
+        }
+        .message {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .user-message {
+            background-color: #007bff;
+            color: white;
+            text-align: right;
+        }
+        .bot-message {
+            background-color: #e9ecef;
+            color: #333;
+        }
+        .input-container {
+            display: flex;
+            gap: 10px;
+        }
+        #messageInput {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        #sendButton {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #sendButton:hover {
+            background-color: #0056b3;
+        }
+        #sendButton:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        .loading {
+            color: #666;
+            font-style: italic;
+        }
+        .status {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .status.success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .status.error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <h1>Chat avec Mistral</h1>
+        <p>Chat avec un modèle Mistral AI en LLM local</p>
+        <div id="status" class="status"></div>
+        <div id="messages" class="messages"></div>
+        <div class="input-container">
+            <input type="text" id="messageInput" placeholder="Tapez votre message..." />
+            <button id="sendButton">Envoyer</button>
+        </div>
+    </div>
+
+    <script>
+        const messagesDiv = document.getElementById('messages');
+        const messageInput = document.getElementById('messageInput');
+        const sendButton = document.getElementById('sendButton');
+        const statusDiv = document.getElementById('status');
+
+        // Vérifier la connexion au démarrage
+        fetch('/test')
+            .then(response => response.json())
+            .then(data => {
+                if (data.model_available) {
+                    statusDiv.textContent = '✅ Moondream connecté et prêt';
+                    statusDiv.className = 'status success';
+                } else {
+                    statusDiv.textContent = '⚠️ Moondream non disponible - Mode test activé';
+                    statusDiv.className = 'status error';
+                }
+            })
+            .catch(error => {
+                statusDiv.textContent = '❌ Erreur de connexion au serveur';
+                statusDiv.className = 'status error';
+            });
+
+        function addMessage(message, isUser = false) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isUser ? 'user-message' : 'bot-message'}`;
+            messageDiv.textContent = message;
+            messagesDiv.appendChild(messageDiv);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        function sendMessage() {
+            const message = messageInput.value.trim();
+            if (!message) return;
+
+            // Afficher le message de l'utilisateur
+            addMessage(message, true);
+            messageInput.value = '';
+            sendButton.disabled = true;
+            
+            // Afficher un indicateur de chargement
+            const loadingDiv = document.createElement('div');
+            loadingDiv.className = 'message bot-message loading';
+            loadingDiv.textContent = 'Génération de la réponse...';
+            loadingDiv.id = 'loading-message';
+            messagesDiv.appendChild(loadingDiv);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
+            // Envoyer la requête au serveur
+            fetch('/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ message: message })
+            })
+            .then(response => {
+                console.log('Status:', response.status);
+                console.log('Headers:', response.headers);
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                const contentType = response.headers.get('content-type');
+                if (!contentType || !contentType.includes('application/json')) {
+                    return response.text().then(text => {
+                        throw new Error('Réponse non-JSON reçue: ' + text);
+                    });
+                }
+                
+                return response.json();
+            })
+            .then(data => {
+                // Supprimer l'indicateur de chargement
+                const loadingMessage = document.getElementById('loading-message');
+                if (loadingMessage) {
+                    loadingMessage.remove();
+                }
+                
+                // Afficher la réponse du bot
+                if (data.response) {
+                    addMessage(data.response);
+                } else if (data.error) {
+                    addMessage('Erreur: ' + data.error);
+                } else {
+                    addMessage('Erreur: Réponse invalide du serveur');
+                }
+            })
+            .catch(error => {
+                // Supprimer l'indicateur de chargement
+                const loadingMessage = document.getElementById('loading-message');
+                if (loadingMessage) {
+                    loadingMessage.remove();
+                }
+                addMessage('Erreur de connexion: ' + error.message);
+                console.error('Erreur complète:', error);
+            })
+            .finally(() => {
+                sendButton.disabled = false;
+            });
+        }
+
+        // Événements
+        sendButton.addEventListener('click', sendMessage);
+        messageInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        // Message de bienvenue
+        addMessage('Bonjour ! Comment puis-je vous aider ?');
+    </script>
+</body>
+</html>

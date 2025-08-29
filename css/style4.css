@@ -1,0 +1,499 @@
+/* Importation de la police Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* Réinitialisation de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables CSS pour une gestion facile des couleurs */
+:root {
+    --bg-dark: #0a0a0a;
+    --bg-medium: #1a1a2e;
+    --bg-light: #16213e;
+    --card-bg-opacity: 0.1; /* Opacité du fond des cartes et sections */
+    --border-color: rgba(255, 255, 255, 0.1);
+    --text-light: #ffffff;
+    --text-medium: #e0e0e0;
+    --text-dark: #a0a0a0;
+    --accent-blue: #87ceeb;
+    --accent-purple: #764ba2;
+    --accent-red: #e74c3c;
+    --shadow-light: rgba(0, 0, 0, 0.2);
+    --shadow-medium: rgba(0, 0, 0, 0.3);
+    --shadow-strong: rgba(0, 0, 0, 0.5);
+    --radius-small: 12px;
+    --radius-medium: 16px;
+    --radius-large: 20px;
+}
+
+/* Styles du corps (Body) */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-medium) 50%, var(--bg-light) 100%);
+    min-height: 100vh;
+    color: var(--text-light);
+    overflow-x: hidden;
+    max-width: 90%; /* Ajusté pour une meilleure lecture sur les grands écrans */
+    margin: 0 auto;
+    padding: 2.5rem 0; /* Ajout d'un peu de padding vertical */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* En-tête */
+header {
+    text-align: center;
+    padding: 2.5rem 0;
+    margin-bottom: 2.5rem;
+    background: linear-gradient(135deg, rgba(25, 25, 40, 0.5) 0%, rgba(16, 185, 129, 0.3) 100%);
+    border-bottom: 1px solid var(--border-color);
+    border-radius: var(--radius-medium);
+    box-shadow: 0 12px 35px var(--shadow-medium);
+    width: 100%;
+    max-width: 1000px; /* Limiter la largeur de l'en-tête */
+    position: relative;
+    overflow: hidden;
+    animation: slideInTop 0.8s ease-out;
+}
+
+@keyframes slideInTop {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header h1 {
+    font-size: 3.2rem;
+    font-weight: 800; /* Plus gras pour un look premium */
+    background: linear-gradient(135deg, #e0f2f7, var(--accent-blue)); /* Dégradé pour le titre */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.05rem; /* Un peu d'espacement pour le style */
+}
+
+/* Navigation */
+nav {
+    background: rgba(25, 25, 40, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-medium);
+    padding: 1.2rem 0;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 8px 25px var(--shadow-medium);
+    width: 100%;
+    max-width: 1000px; /* Limiter la largeur de la navigation */
+    position: relative;
+    overflow: hidden;
+    animation: slideInTop 1s ease-out 0.2s forwards; /* Délai pour l'animation */
+    opacity: 0; /* Commencer invisible pour l'animation */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Pour la réactivité sur mobile */
+    gap: 1.8rem; /* Espacement entre les éléments de navigation */
+}
+
+nav ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.9rem 1.4rem;
+    border-radius: var(--radius-small);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Courbe d'animation plus douce */
+    position: relative;
+    overflow: hidden;
+    display: block;
+    z-index: 1; /* S'assurer que le texte est au-dessus du pseudo-élément */
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+    transition: left 0.4s ease-in-out;
+    z-index: -1; /* Placer derrière le texte */
+}
+
+nav ul li a:hover {
+    color: var(--accent-blue);
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px var(--shadow-light);
+}
+
+nav ul li a:hover::before {
+    left: 100%;
+}
+
+nav ul li a.active {
+    background: linear-gradient(135deg, #667eea 0%, var(--accent-purple) 100%);
+    color: white;
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Conteneur principal et sections */
+main {
+    max-width: 1000px; /* Largeur maximale pour le contenu principal */
+    margin: 0 auto;
+    padding: 0 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Style de base pour toutes les sections (cartes de contenu) */
+section {
+    background: rgba(25, 25, 40, var(--card-bg-opacity));
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-large);
+    padding: 2.5rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 12px 35px var(--shadow-medium);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    animation: fadeIn 1s ease-out forwards; /* Animation d'apparition */
+    opacity: 0; /* Commencer invisible pour l'animation */
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 45px var(--shadow-strong);
+}
+
+/* Ligne décorative en haut des sections */
+section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px; /* Ligne plus épaisse */
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section:nth-child(even) { animation-delay: 0.3s; }
+section:nth-child(odd) { animation-delay: 0.5s; }
+
+
+section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.8rem;
+    color: var(--accent-blue);
+    text-align: center;
+    position: relative;
+    padding-bottom: 0.8rem;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px; /* Ligne plus large */
+    height: 4px; /* Ligne plus épaisse */
+    background: linear-gradient(90deg, transparent, var(--accent-blue), transparent);
+    border-radius: 5px;
+}
+
+section p {
+    font-size: 1.15rem; /* Légèrement plus grande */
+    line-height: 1.9; /* Espacement plus confortable */
+    margin-bottom: 1.2rem;
+    color: var(--text-medium);
+}
+
+/* Styles spécifiques pour la section d'accueil (content) */
+#content h2 {
+    font-size: 3rem; /* Titre plus grand pour l'accueil */
+    background: linear-gradient(135deg, #3498db, #2ecc71); /* Dégradé pour le titre d'accueil */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Styles pour le bloc "Nouveau : Chatbot IA intégré !" */
+.chatbot-promo {
+    background: linear-gradient(45deg, #2c3e50, #3498db);
+    padding: 30px; /* Plus de padding */
+    border-radius: var(--radius-large);
+    margin: 3.5rem 0;
+    color: white;
+    text-align: center;
+    box-shadow: 0 15px 40px var(--shadow-strong);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: fadeInScale 0.8s ease-out;
+    transform: scale(1); /* Assurer l'état initial */
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9); /* Commencer plus petit */
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.chatbot-promo h3 {
+    font-size: 2rem; /* Titre plus grand */
+    margin-bottom: 1rem;
+    color: #fff;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4); /* Ombre plus prononcée */
+}
+
+.chatbot-promo p {
+    font-size: 1.2rem; /* Texte plus grand */
+    margin-bottom: 1.5rem;
+    color: #f0f0f0;
+}
+
+.chatbot-promo a {
+    background: linear-gradient(90deg, var(--accent-red), #c0392b);
+    color: white;
+    padding: 14px 30px; /* Plus de padding */
+    border-radius: 10px; /* Rayon de bordure légèrement plus grand */
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 7px 20px rgba(231, 76, 60, 0.5);
+    letter-spacing: 0.03rem;
+}
+
+.chatbot-promo a:hover {
+    transform: translateY(-5px); /* Effet de "saut" plus prononcé */
+    box-shadow: 0 10px 25px rgba(231, 76, 60, 0.7);
+    filter: brightness(1.2);
+}
+
+/* Styles pour la section "Mes projets" */
+#projects .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Min-width légèrement augmenté */
+    gap: 30px; /* Espacement plus grand */
+    margin: 2rem 0;
+}
+
+.project-card {
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-medium);
+    padding: 30px; /* Plus de padding */
+    background: rgba(255, 255, 255, 0.06); /* Fond légèrement plus opaque */
+    box-shadow: 0 10px 30px var(--shadow-medium);
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    animation: fadeIn 1s ease-out forwards; /* Animation d'apparition */
+}
+
+.project-card:hover {
+    transform: translateY(-10px); /* Effet de "saut" plus prononcé */
+    box-shadow: 0 15px 45px var(--shadow-strong), 0 0 0 4px rgba(135, 206, 235, 0.6); /* Effet de bordure plus prononcé */
+}
+
+.project-card h3 {
+    font-size: 1.6rem; /* Légèrement plus grand */
+    margin-bottom: 1rem;
+    color: var(--accent-blue);
+    font-weight: 600;
+}
+
+.project-card p {
+    font-size: 1.05rem; /* Légèrement plus grand */
+    line-height: 1.7;
+    color: var(--text-medium);
+    margin-bottom: 1.2rem;
+}
+
+.project-card p strong {
+    color: var(--accent-blue);
+}
+
+.project-card a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block;
+    margin-top: 1.5rem;
+    transition: color 0.3s ease, transform 0.2s ease-out;
+    position: relative;
+}
+
+.project-card a::after {
+    content: ' →'; /* Ajout d'une petite flèche */
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateX(-5px);
+    display: inline-block;
+}
+
+.project-card a:hover {
+    color: #66b3ff;
+    text-decoration: underline;
+    transform: translateX(5px); /* Déplacement léger au survol */
+}
+
+.project-card a:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Pied de page (Footer) */
+footer {
+    text-align: center;
+    padding: 2.5rem 0;
+    margin-top: 3.5rem;
+    background: rgba(25, 25, 40, 0.7);
+    backdrop-filter: blur(15px);
+    border-top: 1px solid var(--border-color);
+    border-radius: var(--radius-medium);
+    box-shadow: 0 -8px 25px var(--shadow-medium);
+    width: 100%;
+    max-width: 1000px;
+    animation: slideInBottom 0.8s ease-out 0.8s forwards; /* Animation d'apparition avec délai */
+    opacity: 0; /* Commencer invisible */
+}
+
+@keyframes slideInBottom {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+footer p {
+    font-size: 1rem; /* Légèrement plus grand */
+    color: var(--text-dark);
+}
+
+/* Réactivité */
+@media (max-width: 768px) {
+    body {
+        max-width: 95%;
+        padding: 1.5rem 0;
+    }
+
+    header {
+        padding: 1.5rem 0;
+        margin-bottom: 1.5rem;
+    }
+
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    nav {
+        padding: 0.8rem 0;
+        margin-bottom: 1.5rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    nav ul li a {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.95rem;
+    }
+
+    section {
+        padding: 2rem;
+        margin-bottom: 2rem;
+        border-radius: var(--radius-medium);
+    }
+
+    section h2 {
+        font-size: 2rem;
+        margin-bottom: 1.2rem;
+    }
+
+    #content h2 {
+        font-size: 2.5rem;
+    }
+
+    .chatbot-promo {
+        padding: 25px;
+        margin: 2.5rem 0;
+        border-radius: var(--radius-medium);
+    }
+
+    .chatbot-promo h3 {
+        font-size: 1.7rem;
+    }
+
+    .chatbot-promo a {
+        padding: 12px 25px;
+        font-size: 0.95rem;
+    }
+
+    #projects .project-grid {
+        grid-template-columns: 1fr; /* Une colonne sur mobile */
+        gap: 1.5rem;
+    }
+
+    .project-card {
+        padding: 25px;
+        border-radius: var(--radius-small);
+    }
+
+    .project-card h3 {
+        font-size: 1.4rem;
+    }
+
+    .project-card p {
+        font-size: 1rem;
+    }
+
+    footer {
+        padding: 2rem 0;
+        margin-top: 2.5rem;
+        border-radius: var(--radius-medium);
+    }
+}

@@ -1,0 +1,463 @@
+/* ==========================================================================
+   RESET ET BASE
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: #1c1c1c;
+  color: #f0f0f0;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================================================
+   VARIABLES CSS
+   ========================================================================== */
+
+:root {
+  /* Couleurs principales */
+  --primary-gradient: linear-gradient(45deg, #6a11cb, #2575fc);
+  --bg-dark: #1c1c1c;
+  --bg-medium: #292929;
+  --text-light: #f0f0f0;
+  --text-medium: #cccccc;
+  --text-muted: #8c8c8c;
+  --accent-blue: #2575fc;
+  --accent-purple: #6a11cb;
+  
+  /* Espacements */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  
+  /* Bordures */
+  --border-radius: 10px;
+  --border-radius-sm: 5px;
+  --border-radius-lg: 15px;
+  
+  /* Ombres */
+  --shadow-base: 0 4px 10px rgba(0, 0, 0, 0.2);
+  --shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.3);
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+
+header {
+  background: var(--primary-gradient);
+  text-align: center;
+  padding: var(--spacing-lg) 0;
+}
+
+header h1 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================================================
+   NAVIGATION
+   ========================================================================== */
+
+#header {
+  background-color: #444;
+  padding: var(--spacing-sm) 0;
+}
+
+#header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+#header nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius-sm);
+  transition: background-color var(--transition-medium);
+  display: block;
+}
+
+#header nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Navigation des liens */
+#liens {
+  background-color: #000;
+  padding: var(--spacing-sm) 0;
+}
+
+#liens nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+#liens nav ul li a {
+  color: #919191;
+  text-decoration: none;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius-sm);
+  transition: all var(--transition-medium);
+}
+
+#liens nav ul li a:hover {
+  background-color: rgba(40, 7, 255, 0.526);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   MAIN CONTENT
+   ========================================================================== */
+
+main {
+  flex: 1;
+  padding: var(--spacing-xl) var(--spacing-md);
+}
+
+/* Introduction */
+.intro {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.intro h2 {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  color: var(--accent-purple);
+  margin-bottom: var(--spacing-md);
+}
+
+.intro p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--text-medium);
+}
+
+/* Layout en ligne pour le contenu */
+.content-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-lg);
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-lg);
+}
+
+/* ==========================================================================
+   SECTIONS DE CONTENU
+   ========================================================================== */
+
+/* Styles de base pour toutes les sections */
+.content-section {
+  flex: 1 1 300px;
+  max-width: 850px;
+  margin: 0 auto var(--spacing-lg);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-base);
+  font-size: 1.1rem;
+  color: #ffffff;
+  line-height: 1.6;
+  text-align: center;
+  font-family: inherit;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.content-section:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Sections spécifiques avec leurs gradients */
+#content {
+  background: linear-gradient(45deg, rgba(47, 0, 255, 0.25), rgba(98, 0, 0, 1));
+}
+
+#review {
+  height: auto;
+  min-height: 50px;
+  padding: var(--spacing-md);
+  background: linear-gradient(45deg, rgba(47, 0, 255, 0.12), rgba(98, 0, 0, 0.18));
+  border: 2px solid rgba(255, 255, 255, 0.34);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#projects {
+  background: linear-gradient(100deg, #0b096f, rgba(95, 182, 3, 0.43));
+}
+
+#contact {
+  background: linear-gradient(45deg, rgba(91, 2, 2, 0.73), rgba(25, 174, 188, 0.53));
+}
+
+#contact2 {
+  background: linear-gradient(45deg, rgba(83, 180, 215, 0.46), #a5a512);
+}
+
+#contact3 {
+  background: linear-gradient(45deg, rgba(177, 193, 73, 0.47), #b91313);
+}
+
+#cv {
+  background: linear-gradient(90deg, #5f0e0e, rgba(55, 34, 237, 0.67));
+}
+
+#motiv {
+  background: linear-gradient(90deg, rgba(55, 34, 237, 0.67), #0d8134);
+}
+
+#perso {
+  background: linear-gradient(90deg, rgba(28, 6, 230, 0.67), #872f2f);
+}
+
+#formation {
+  background: linear-gradient(90deg, rgba(230, 6, 6, 0.5), #a96109);
+}
+
+#projects_formation,
+#projects_perso {
+  background: linear-gradient(90deg, rgba(25, 6, 230, 0.5), #872f2f);
+}
+
+#map {
+  background: linear-gradient(90deg, rgba(6, 230, 211, 0.5), #872f2f);
+}
+
+#salemagne {
+  background: linear-gradient(25deg, rgba(25, 6, 230, 0.5), #872f2f);
+}
+
+#amvs {
+  background: linear-gradient(25deg, rgba(16, 2, 169, 0.82), rgba(255, 255, 255, 0.42), #801616);
+}
+
+#dipBTS {
+  background: linear-gradient(25deg, rgba(248, 242, 61, 0.62), #043a91);
+}
+
+#Lycée {
+  background: linear-gradient(25deg, rgba(25, 6, 230, 0.5), #390000);
+}
+
+#Collège {
+  background: linear-gradient(25deg, rgba(189, 230, 6, 0.5), #391c00);
+}
+
+#DIPautres {
+  background: linear-gradient(25deg, #ff0000, #0004ff);
+}
+
+/* ==========================================================================
+   TIMELINE
+   ========================================================================== */
+
+.timeline {
+  margin: var(--spacing-lg) auto;
+  max-width: 800px;
+}
+
+.timeline h2 {
+  font-size: 2.2rem;
+  color: var(--accent-blue);
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.timeline-item {
+  background: var(--bg-medium);
+  padding: var(--spacing-lg);
+  border-left: 5px solid var(--accent-purple);
+  margin-bottom: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-base);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.timeline-item:hover {
+  transform: scale(1.02);
+  background-color: var(--accent-purple);
+  box-shadow: var(--shadow-hover);
+}
+
+.timeline-item h3 {
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin-bottom: var(--spacing-sm);
+}
+
+.timeline-item p {
+  color: #bfbfbf;
+}
+
+/* ==========================================================================
+   BOUTONS
+   ========================================================================== */
+
+#sendbutton {
+  background-color: #000;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: #818181;
+  padding: var(--spacing-md) var(--spacing-lg);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  margin: var(--spacing-sm);
+  cursor: pointer;
+  border-radius: var(--border-radius-lg);
+  width: min(420px, 100%);
+  height: 50px;
+  transition: all var(--transition-slow);
+  font-family: inherit;
+}
+
+#sendbutton:hover {
+  background-color: #08147c;
+  color: white;
+  border-color: #08147c;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-base);
+}
+
+#sendbutton:active {
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
+footer {
+  background-color: var(--bg-medium);
+  color: var(--text-muted);
+  padding: var(--spacing-lg) 0;
+  text-align: center;
+  margin-top: auto;
+}
+
+footer p {
+  font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  :root {
+    --spacing-xl: 2rem;
+    --spacing-lg: 1.5rem;
+  }
+  
+  .content-row {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+  
+  .content-section {
+    flex: 1 1 auto;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  #header nav ul,
+  #liens nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .timeline-item h3 {
+    font-size: 1.5rem;
+  }
+  
+  #sendbutton {
+    width: 100%;
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: var(--spacing-lg) var(--spacing-sm);
+  }
+  
+  .content-section {
+    padding: var(--spacing-md);
+    font-size: 1rem;
+  }
+  
+  .intro p {
+    font-size: 1.1rem;
+  }
+}
+
+/* ==========================================================================
+   UTILITAIRES
+   ========================================================================== */
+
+.console {
+  cursor: pointer;
+}
+
+#top,
+#topL {
+  background-color: aliceblue;
+}
+
+/* États de focus pour l'accessibilité */
+a:focus,
+button:focus,
+.timeline-item:focus {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}
+
+/* Animation de chargement */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.content-section {
+  animation: fadeIn 0.6s ease-out;
+}

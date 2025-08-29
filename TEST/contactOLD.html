@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Me contacter</title>
+  <link rel="stylesheet" href="css/style7dark.css">
+</head>
+<body>
+  <header>
+    <h1>Me contacter</h1>
+  </header>
+
+  <div id="header" id ="top" style ="text-align: center;";>
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="diplomes.html">Mes diplômes</a></li>
+            <li><a href="formation.html">Présentation de ma formation</a></li>
+            <li><a href="stages.html">Mes stages</a></li>
+            <li><a href="CV.html">Mon CV</a></li>
+            <li><a href="veilletechno.html">Ma veille technologique</a></li>
+            <li><a href="presentationperso.html">Présentation personnelle</a></li>
+            <li><a href="contact.html">Me contacter</a></li>
+        </ul>
+    </nav>
+</div>
+  <section>
+
+    <br>
+    <section id="contacts">
+      <h2>Me contacter par mail</h2>
+      <p>Pour me contacter, n'hésitez pas à utiliser cette messagerie mail</p>
+      <hr>
+    <form method="POST" id="form">
+    <input type="hidden" name="access_key" value="ddc9aeb6-a9c1-4b90-9bcf-4bf5d2a27a0b">
+    <br>
+    <input type="text" name="name" required placeholder="Votre nom" style="width: 100%; max-width: 400px; height: 25px; padding: 5px; border-radius: 5px; border: 1px solid #000000; background-color: black ; color: #ffffff;"> 
+    <br>
+    <br>
+    <input type="email" name="email" required placeholder="Votre adresse mail" style="width: 100%; max-width: 400px; height: 25px; padding: 5px; border-radius: 5px; border: 1px solid #000000; background-color: black ; color: #ffffff;">
+    <br>
+    <br>
+    <textarea name="message" required placeholder="Votre message" style="width: 100%; max-width: 400px; padding: 5px; border-radius: 5px; border: 1px solid #000000; background-color: black ; color: #ffffff;"></textarea>
+    <input type="checkbox" name="botcheck" class="hidden" style="display: none;" >
+    <br>
+    <br>
+    <button id="sendbutton" style=""type="submit">Envoyer</button>
+
+    <div id="result"></div>
+    </form>
+
+<script>
+const form = document.getElementById('form');
+const result = document.getElementById('result');
+
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const formData = new FormData(form);
+  const object = Object.fromEntries(formData);
+  const json = JSON.stringify(object);
+  result.innerHTML = "Veuillez patienter..."
+
+    fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: json
+        })
+        .then(async (response) => {
+            let json = await response.json();
+            if (response.status == 200) {
+                result.innerHTML = "Votre message à été envoyé avec succès !";
+            } else {
+                console.log(response);
+                result.innerHTML = json.message;
+            }
+        })
+        .catch(error => {
+            console.log(error);
+            result.innerHTML = "Quelque chose s'est mal passé, veuillez réessayer plus tard.";
+        })
+        .then(function() {
+            form.reset();
+            setTimeout(() => {
+                result.style.display = "none";
+            }, 3000);
+        });
+});
+      </script>
+        
+        </section>
+
+        <br>
+
+      <section id="contact2">
+        <h2>Me contacter sur les réseaux sociaux</h2>
+        <p>Vous pouvez aussi me contacter sur les réseaux sociaux suivants :</p>
+        <div id="liens" id="topL" style="text-align: center; border-radius: 110px;">
+        <nav>
+          <ul>
+            <li><a href="https://www.linkedin.com/in/t%C3%A9lio-desmet-44877a328/">Linkedin</a></li>
+            <li><a href="https://profile.indeed.com/?hl=fr_FR&co=FR&from=gnav-homepage">Indeed</a></li>
+            <li><a href="https://github.com/telio-desmet">GitHub</a></li>
+          </ul>
+        </nav>
+        </div>
+        <p>Vous pouvez aussi me contacter sur les réseaux sociaux suivant biens que ceux-ci soit personnels</p>
+        <div id="liens" id="topL" style="text-align: center; border-radius: 110px;">
+        <nav>
+          <ul>
+            <li><a href="Placeholder">Snapshat</a></li>
+            <li><a href="Placeholder">Instagram</a></li>
+            <li><a href="Placeholder">YouTube</a>
+            <li><a href="Placeholder">Discord</a></li>
+          </ul>
+        </nav>
+        </div>
+      </section>
+
+      <br>
+
+      <section id="contact3">
+        <h2>Me contacter par mail ou par téléphonne</h2>
+        <p>Vous pouvez me contacter par mail sur ces 2 adresses mail :</p>
+                <div id="liens" id="topL" style="text-align: center; border-radius: 110px;">
+        <nav>
+          <ul>
+        <li><a >telio.desmet@gmail.com</a></li>
+        <li><a>telio.desmet@ltpdampierre.fr</a></li>
+          </ul>
+        </nav>
+        </div>
+
+        <hr>
+        <p>Voici mon numéro de téléphonne</p>
+        <p>0674803319</p>
+      </section>
+      <br>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 - Télio Desmet</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

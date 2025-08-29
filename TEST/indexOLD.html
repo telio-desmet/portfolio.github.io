@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Page d'accueil</title>
+  <link rel="stylesheet" href="css/style7dark.css">
+</head>
+<body>
+  <header>
+    <h1>Bienvenue sur mon portfolio</h1>
+  </header>
+
+  <div id="header" id="top" style="text-align: center;">
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Accueil</a></li>
+            <li><a href="diplomes.html">Mes diplômes</a></li>
+            <li><a href="formation.html">Présentation de ma formation</a></li>
+            <li><a href="stages.html">Mes stages</a></li>
+            <li><a href="CV.html">Mon CV</a></li>
+            <li><a href="veilletechno.html">Ma veille technologique</a></li>
+            <li><a href="presentationperso.html">Présentation personnelle</a></li>
+            <li><a href="contact.html">Me contacter</a></li>
+        </ul>
+    </nav>
+  </div>
+
+  <main>
+    <section id="content">
+      <h2>Bonjour !</h2>
+      <p>Bienvenue sur mon site web.</p>
+      <p>Celui-ci fut développé intégralement par mes soins en HTML.</p>
+      <p>N'hésitez pas à naviguer dans les menus grâce à barre de navigation ci-dessus.</p>
+      <p>Pour plus de renseignement, rendez-vous dans l'onglet « Me Contacter », d'ici, vous pourrez me joindre directement par mail depuis le site.</p>
+      
+      <div style="background: linear-gradient(45deg, #2c3e50, #3498db); padding: 20px; border-radius: 10px; margin: 20px 0; color: white; text-align: center;">
+        <h3>🚀 Nouveau : Chatbot IA intégré !</h3>
+        <p>Découvrez mon chatbot propulsé par Gemma 3-1B, un modèle d'IA local.</p>
+        <a href="http://127.0.0.1:5000/" style="background: #e74c3c; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; display: inline-block; margin-top: 10px;">
+          🤖 Essayer le chatbot
+        </a>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Mes projets</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+        
+        <!-- Carte projet Chatbot -->
+        <div style="border: 1px solid #ddd; border-radius: 8px; padding: 20px; background: #f9f9f9;">
+          <h3>🤖 Chatbot IA avec Gemma 3</h3>
+          <p>Application web intégrant un modèle d'IA local Gemma 3-1B avec interface Flask et HTML/CSS/JavaScript.</p>
+          <p><strong>Technologies :</strong> Python, Flask, LangChain, Ollama, HTML/CSS/JS</p>
+          <a href="http://127.0.0.1:5000/" style="color: #3498db; text-decoration: none;">→ Tester le chatbot</a>
+        </div>
+        
+        <!-- Autres projets peuvent être ajoutés ici -->
+        <div style="border: 1px solid #ddd; border-radius: 8px; padding: 20px; background: #f9f9f9;">
+          <h3>🌐 Portfolio Web</h3>
+          <p>Site web personnel développé en HTML/CSS pour présenter mon parcours et mes compétences.</p>
+          <p><strong>Technologies :</strong> HTML5, CSS3, JavaScript</p>
+        </div>
+        
+      </div>
+    </section>
+
+    <section id="formation">
+      <h2>Ma formation</h2>
+      <p>Actuellement en BTS SIO, option SLAM.</p>
+      <p>Formation axée sur le développement web et la gestion de projets informatiques.</p>
+    </section>
+  </main>
+
+  <br>
+  
+  <section id="cv">
+    <h2>Mes stages</h2>
+    <p>J'ai effectué plusieurs stages dans le domaine du développement web, où j'ai pu mettre en pratique mes compétences.</p>
+  </section>
+
+  <br>
+  
+  <footer>
+    <p>&copy; 2025 - Télio Desmet</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

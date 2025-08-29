@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de contact</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
+        }
+
+        #contacts {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        #contacts h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        #contacts p {
+            color: #cccccc;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            margin: 30px 0;
+            border-radius: 2px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"], 
+        input[type="email"], 
+        textarea {
+            width: 100%;
+            max-width: 400px;
+            padding: 15px;
+            border-radius: 12px;
+            border: 2px solid #333;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        input[type="text"]:focus, 
+        input[type="email"]:focus, 
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+            transform: translateY(-2px);
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* Bouton moderne et réactif */
+        #sendbutton {
+            position: relative;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 50px;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 16px 40px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+            min-width: 160px;
+        }
+
+        #sendbutton::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        #sendbutton:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+            background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+        }
+
+        #sendbutton:hover::before {
+            left: 100%;
+        }
+
+        #sendbutton:active {
+            transform: translateY(-1px) scale(1.02);
+            transition: all 0.1s;
+        }
+
+        #sendbutton:disabled {
+            background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Animation de chargement */
+        .loading {
+            position: relative;
+        }
+
+        .loading::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            margin: auto;
+            border: 2px solid transparent;
+            border-top-color: #ffffff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        @keyframes spin {
+            0% { transform: translateY(-50%) rotate(0deg); }
+            100% { transform: translateY(-50%) rotate(360deg); }
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 12px;
+            font-weight: 500;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+
+        #result.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .success {
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+            color: white;
+        }
+
+        .error {
+            background: linear-gradient(135deg, #f56565 0%, #e53e3e 100%);
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            #contacts {
+                padding: 20px 10px;
+            }
+            
+            #contacts h2 {
+                font-size: 2rem;
+            }
+            
+            input[type="text"], 
+            input[type="email"], 
+            textarea {
+                max-width: 100%;
+            }
+            
+            #sendbutton {
+                width: 100%;
+                max-width: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section id="contacts">
+        <h2>Me contacter par mail</h2>
+        <p>Pour me contacter, n'hésitez pas à utiliser cette messagerie mail</p>
+        <hr>
+        
+        <form method="POST" id="form">
+            <input type="hidden" name="access_key" value="ddc9aeb6-a9c1-4b90-9bcf-4bf5d2a27a0b">
+            
+            <div class="form-group">
+                <input type="text" name="name" required placeholder="Votre nom">
+            </div>
+            
+            <div class="form-group">
+                <input type="email" name="email" required placeholder="Votre adresse mail">
+            </div>
+            
+            <div class="form-group">
+                <textarea name="message" required placeholder="Votre message"></textarea>
+            </div>
+            
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+            
+            <button id="sendbutton" type="submit">Envoyer</button>
+            <div id="result"></div>
+        </form>
+    </section>
+
+    <script>
+        const form = document.getElementById('form');
+        const result = document.getElementById('result');
+        const sendButton = document.getElementById('sendbutton');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Animation du bouton pendant l'envoi
+            sendButton.disabled = true;
+            sendButton.classList.add('loading');
+            sendButton.textContent = 'Envoi en cours...';
+            
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+            
+            result.innerHTML = "Veuillez patienter...";
+            result.className = "";
+            result.classList.add('show');
+            
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+            .then(async (response) => {
+                let json = await response.json();
+                if (response.status == 200) {
+                    result.innerHTML = "✅ Votre message a été envoyé avec succès !";
+                    result.className = "show success";
+                } else {
+                    console.log(response);
+                    result.innerHTML = "❌ " + json.message;
+                    result.className = "show error";
+                }
+            })
+            .catch(error => {
+                console.log(error);
+                result.innerHTML = "❌ Quelque chose s'est mal passé, veuillez réessayer plus tard.";
+                result.className = "show error";
+            })
+            .then(function() {
+                // Réinitialiser le bouton
+                sendButton.disabled = false;
+                sendButton.classList.remove('loading');
+                sendButton.textContent = 'Envoyer';
+                
+                form.reset();
+                setTimeout(() => {
+                    result.classList.remove('show');
+                    setTimeout(() => {
+                        result.innerHTML = "";
+                        result.className = "";
+                    }, 300);
+                }, 3000);
+            });
+        });
+    </script>
+</body>
+</html>
