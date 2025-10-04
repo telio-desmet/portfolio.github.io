@@ -4,11 +4,12 @@ Bienvenue sur mon nouveau portfolio, nouvelle version faite après ma première 
 
 En espérant que vous apprécierez y naviguer et que vous y trouverez les informations que vous cherchez.
 
-N'hésitez pas non plus à naviguer dans les fichiers du projet pour voir le code source du site web.
+N'hésitez pas non plus à naviguer dans les fichiers du projet pour voir le code source du site web et à me contacter depuis le site si vous avez des questions.
 
 #### Pour accéder au site web :
 #### https://telio-desmet.github.io/portfolio.github.io/
 
+---
 Améliorations diverses face à l'ancienne version :
 ---
 - Nouvelle interface graphique
