@@ -11,7 +11,7 @@
     <h1>Ma Veille technologique</h1>
   </header>
 
-  <div id="header" id ="top" style ="text-align: center;";>
+  <div id="header" style="text-align: center;">
     <nav>
         <ul>
             <li><a href="index.html">Accueil</a></li>
@@ -35,18 +35,221 @@
 
 <section id="contact2">
         <p>Voici les divers articles que j'ai trouvés :</p>
-        <div id="liens" id="topL" style="text-align: center; border-radius: 110px;">
-        <nav>
-          <ul>
-            <li><a href="https://www.iquesta.com/Article-Lia-Et-Lavenir-Des-Developpeurs-En-Informatique-Quoi-Attendre-228.html">L'IA et l'avenir des développeurs en informatique: Quoi attendre?</a></li>
-            <li><a href="https://www.zdnet.fr/actualites/microsoft-france-200-suppressions-de-postes-lia-au-coeur-du-remaniement-481154.htm">Microsoft France : 200 suppressions de postes, l’IA au cœur du remaniement</a></li>
-            <li><a href="https://www.lebigdata.fr/l-ia-va-detruire-ces-metiers-selon-le-pdg-d-openai-chatgpt-va-t-il-vous-remplacer"> L’IA va détruire ces métiers, selon le PDG d’OpenAI : ChatGPT va-t-il vous remplacer ?</a></li>
-          </ul>
-        </nav>
+        <div id="topL" style="text-align: center; border-radius: 110px;">
+        <div class="cards-grid" id="liens">
+          <!-- Carte 1 : Iquesta -->
+          <article class="card" tabindex="0" role="button"
+                   data-url="https://www.iquesta.com/Article-Lia-Et-Lavenir-Des-Developpeurs-En-Informatique-Quoi-Attendre-228.html"
+                   data-source="Iquesta"
+                   data-summary="L'intelligence artificielle transforme profondément le métier de développeur informatique, bouleversant les pratiques établies depuis des décennies. Cet article d'Iquesta analyse en détail comment l'IA modifie les tâches quotidiennes des développeurs, depuis l'automatisation du code répétitif et boilerplate jusqu'à l'assistance intelligente pour la résolution de bugs complexes et l'optimisation des performances. Les développeurs doivent désormais apprendre à collaborer efficacement avec ces outils d'IA générative comme GitHub Copilot, ChatGPT ou Claude, tout en conservant leur expertise critique pour valider, réviser et optimiser le code produit automatiquement. L'article explore également les nouvelles compétences indispensables pour rester compétitif dans ce contexte technologique en évolution rapide, notamment la maîtrise du prompt engineering, la compréhension approfondie des limites et biais de l'IA, ainsi que le développement d'une vision architecturale globale que les machines ne peuvent pas encore reproduire."
+                   data-image="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=200&fit=crop">
+            <div class="card-image">
+              <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=200&fit=crop" alt="Code et développement IA" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div class="card-header">
+                <div class="card-logo" aria-hidden="true">IQ</div>
+                <h4 class="card-title">L'IA et l'avenir des développeurs en informatique : à quoi s'attendre ?</h4>
+              </div>
+              <p class="card-summary">L'intelligence artificielle transforme profondément le métier de développeur informatique, bouleversant les pratiques établies depuis des décennies. Cet article d'Iquesta analyse en détail comment l'IA modifie les tâches quotidiennes des développeurs, depuis l'automatisation du code répétitif et boilerplate jusqu'à l'assistance intelligente pour la résolution de bugs complexes et l'optimisation des performances. Les développeurs doivent désormais apprendre à collaborer efficacement avec ces outils d'IA générative comme GitHub Copilot, ChatGPT ou Claude, tout en conservant leur expertise critique pour valider, réviser et optimiser le code produit automatiquement.</p>
+              <p class="card-source">Iquesta</p>
+            </div>
+          </article>
+
+          <!-- Carte 2 : ZDNet Microsoft -->
+          <article class="card" tabindex="0" role="button"
+                   data-url="https://www.zdnet.fr/actualites/microsoft-france-200-suppressions-de-postes-lia-au-coeur-du-remaniement-481154.htm"
+                   data-source="ZDNet"
+                   data-summary="Microsoft France annonce une importante restructuration avec 200 suppressions de postes, plaçant l'intelligence artificielle au centre de sa stratégie de transformation numérique. Cette réorganisation majeure illustre de manière concrète comment les grandes entreprises technologiques redéfinissent leurs besoins en ressources humaines face à l'automatisation croissante de nombreuses tâches traditionnellement effectuées par des humains. L'article détaille précisément les départements concernés par ces licenciements, les profils de postes supprimés, mais surtout les nouvelles compétences activement recherchées par Microsoft dans ce contexte de mutation. Le géant américain mise désormais sur des profils capables de piloter, superviser et améliorer des systèmes d'IA plutôt que d'exécuter manuellement certaines tâches devenues automatisables. Cette évolution soulève des questions fondamentales sur l'adaptation de la main-d'œuvre, la nécessité d'une formation continue tout au long de la carrière et le rôle des pouvoirs publics dans l'accompagnement de cette transition."
+                   data-image="https://images.unsplash.com/photo-1633419461186-7d40a38105ec?w=400&h=200&fit=crop">
+            <div class="card-image">
+              <img src="https://images.unsplash.com/photo-1633419461186-7d40a38105ec?w=400&h=200&fit=crop" alt="Microsoft et restructuration" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div class="card-header">
+                <div class="card-logo" aria-hidden="true">ZD</div>
+                <h4 class="card-title">Microsoft France : 200 suppressions de postes, l'IA au cœur du remaniement</h4>
+              </div>
+              <p class="card-summary">Microsoft France annonce une importante restructuration avec 200 suppressions de postes, plaçant l'intelligence artificielle au centre de sa stratégie de transformation numérique. Cette réorganisation majeure illustre de manière concrète comment les grandes entreprises technologiques redéfinissent leurs besoins en ressources humaines face à l'automatisation croissante de nombreuses tâches traditionnellement effectuées par des humains. L'article détaille précisément les départements concernés par ces licenciements et les nouvelles compétences activement recherchées par Microsoft.</p>
+              <p class="card-source">ZDNet</p>
+            </div>
+          </article>
+
+          <!-- Carte 3 : LeBigData OpenAI -->
+          <article class="card" tabindex="0" role="button"
+                   data-url="https://www.lebigdata.fr/l-ia-va-detruire-ces-metiers-selon-le-pdg-d-openai-chatgpt-va-t-il-vous-remplacer"
+                   data-source="LeBigData"
+                   data-summary="Le PDG d'OpenAI, Sam Altman, créateur du célèbre ChatGPT, partage sa vision provocante et sans concession sur l'avenir du travail et établit une liste détaillée des métiers qui pourraient disparaître ou être profondément transformés par l'intelligence artificielle dans les prochaines années. Cette analyse approfondie examine les caractéristiques communes des emplois les plus vulnérables à l'automatisation : les tâches répétitives et prévisibles, le travail administratif standardisé, les activités de saisie de données, et plus généralement tous les postes nécessitant peu de créativité ou d'interaction humaine complexe. L'article explore également les différents scénarios possibles d'évolution du marché du travail, allant du remplacement pur et simple de certains métiers à la transformation progressive des rôles professionnels où l'humain devient superviseur, correcteur et stratège face à des IA de plus en plus performantes. Les implications économiques et sociales de ces changements sont également abordées."
+                   data-image="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=400&h=200&fit=crop">
+            <div class="card-image">
+              <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=400&h=200&fit=crop" alt="ChatGPT et OpenAI" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div class="card-header">
+                <div class="card-logo" aria-hidden="true">LB</div>
+                <h4 class="card-title">L'IA va détruire ces métiers, selon le PDG d'OpenAI : ChatGPT va-t-il vous remplacer ?</h4>
+              </div>
+              <p class="card-summary">Le PDG d'OpenAI, Sam Altman, créateur du célèbre ChatGPT, partage sa vision provocante et sans concession sur l'avenir du travail et établit une liste détaillée des métiers qui pourraient disparaître ou être profondément transformés par l'intelligence artificielle dans les prochaines années. Cette analyse approfondie examine les caractéristiques communes des emplois les plus vulnérables à l'automatisation : les tâches répétitives et prévisibles, le travail administratif standardisé, les activités de saisie de données.</p>
+              <p class="card-source">LeBigData</p>
+            </div>
+          </article>
+
+          <!-- Carte 4 : Developpez Linus Torvalds -->
+          <article class="card" tabindex="0" role="button"
+                   data-url="https://intelligence-artificielle.developpez.com/actu/379107/Linus-Torvalds-refuse-de-transformer-la-documentation-du-kernel-en-champ-de-bataille-ideologique-anti-IA-arretez-de-faire-toute-une-histoire-de-l-IA-slop-dans-la-documentation-du-noyau/"
+                   data-source="Developpez.com"
+                   data-summary="Linus Torvalds, le créateur légendaire du noyau Linux et figure emblématique du monde open source, prend fermement position dans le débat houleux qui agite la communauté concernant l'utilisation de l'intelligence artificielle pour rédiger ou modifier la documentation technique du noyau Linux. Dans ses échanges caractéristiquement francs et directs sur les mailing lists du projet, il refuse catégoriquement que ce sujet technique devienne un 'champ de bataille idéologique' opposant pro et anti-IA. Torvalds demande à la communauté de cesser de dramatiser l'usage de l'IA dans la documentation, estimant que les outils utilisés pour produire un contenu importent moins que la qualité et l'exactitude du résultat final. Son point de vue pragmatique et terre-à-terre souligne que le kernel Linux a toujours accueilli les contributions de qualité, quel que soit le processus utilisé pour les créer, tant qu'elles respectent les standards techniques du projet."
+                   data-image="https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=400&h=200&fit=crop">
+            <div class="card-image">
+              <img src="https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=400&h=200&fit=crop" alt="Linux et open source" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div class="card-header">
+                <div class="card-logo" aria-hidden="true">DV</div>
+                <h4 class="card-title">Linus Torvalds refuse de transformer la documentation du kernel en champ de bataille idéologique anti-IA</h4>
+              </div>
+              <p class="card-summary">Linus Torvalds, le créateur légendaire du noyau Linux et figure emblématique du monde open source, prend fermement position dans le débat houleux qui agite la communauté concernant l'utilisation de l'intelligence artificielle pour rédiger ou modifier la documentation technique du noyau Linux. Dans ses échanges caractéristiquement francs et directs, il refuse catégoriquement que ce sujet technique devienne un 'champ de bataille idéologique' opposant pro et anti-IA.</p>
+              <p class="card-source">Developpez.com</p>
+            </div>
+          </article>
+
+          <!-- Carte 5 : Numerama Vibe Coding -->
+          <article class="card" tabindex="0" role="button"
+                   data-url="https://www.numerama.com/tech/2157803-meme-linus-torvalds-sest-mis-au-vibe-coding-et-il-a-une-excellente-raison.html"
+                   data-source="Numerama"
+                   data-summary="Le 'vibe coding', cette nouvelle pratique révolutionnaire consistant à coder de manière plus intuitive et fluide en s'appuyant massivement sur des assistants IA, gagne du terrain même parmi les développeurs les plus chevronnés et respectés de l'industrie. Linus Torvalds lui-même, figure emblématique et légendaire du monde open source, créateur de Linux et Git, a récemment adopté cette approche moderne pour certaines de ses tâches de développement. L'article de Numerama explore en profondeur les raisons qui ont poussé ce programmeur perfectionniste à changer ses habitudes de travail : le gain de temps considérable sur les tâches répétitives et ennuyeuses, la possibilité de se concentrer sur l'architecture logicielle et la logique métier plutôt que sur la syntaxe et les détails d'implémentation, ainsi que la réduction de la charge mentale associée au codage intensif. Cette adoption par une figure aussi respectée marque un tournant symbolique dans l'acceptation des outils d'IA par la communauté des développeurs."
+                   data-image="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=200&fit=crop">
+            <div class="card-image">
+              <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=200&fit=crop" alt="Programmation et coding" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div class="card-header">
+                <div class="card-logo" aria-hidden="true">NU</div>
+                <h4 class="card-title">Même Linus Torvalds s'est mis au "vibe coding", et il a une excellente raison</h4>
+              </div>
+              <p class="card-summary">Le 'vibe coding', cette nouvelle pratique révolutionnaire consistant à coder de manière plus intuitive et fluide en s'appuyant massivement sur des assistants IA, gagne du terrain même parmi les développeurs les plus chevronnés et respectés de l'industrie. Linus Torvalds lui-même, figure emblématique du monde open source, créateur de Linux et Git, a récemment adopté cette approche moderne pour certaines de ses tâches de développement quotidiennes.</p>
+              <p class="card-source">Numerama</p>
+            </div>
+          </article>
+
+          <!-- Carte 6 : ZDNet Claude Cowork -->
+          <article class="card" tabindex="0" role="button"
+                   data-url="https://www.zdnet.fr/actualites/claude-cowork-automatise-les-taches-complexes-a-vos-risques-et-perils-488049.html"
+                   data-source="ZDNet"
+                   data-summary="Claude Cowork, la nouvelle fonctionnalité révolutionnaire développée par Anthropic, promet d'automatiser des tâches complexes en agissant de manière totalement autonome directement sur votre ordinateur. Cet article de ZDNet présente un retour d'expérience détaillé et honnête sur les capacités véritablement impressionnantes de cet outil d'automatisation nouvelle génération : navigation intelligente dans des interfaces utilisateur complexes, manipulation précise de fichiers et dossiers, exécution de workflows multi-étapes sans intervention humaine, et bien plus encore. Cependant, l'auteur de l'article souligne également avec lucidité les risques significatifs et parfois sous-estimés associés à cette automatisation poussée. Confier les commandes de son ordinateur à une IA, même performante, soulève des questions importantes de sécurité, de confidentialité des données et de contrôle. L'article examine les cas d'usage pertinents tout en mettant en garde contre les situations où la prudence reste de mise."
+                   data-image="https://images.unsplash.com/photo-1676299081847-c3c9b5b5a1e0?w=400&h=200&fit=crop">
+            <div class="card-image">
+              <img src="https://images.unsplash.com/photo-1676299081847-c3c9b5b5a1e0?w=400&h=200&fit=crop" alt="Intelligence artificielle Claude" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div class="card-header">
+                <div class="card-logo" aria-hidden="true">ZD</div>
+                <h4 class="card-title">Claude Cowork automatise les tâches complexes, à vos risques et périls</h4>
+              </div>
+              <p class="card-summary">Claude Cowork, la nouvelle fonctionnalité révolutionnaire développée par Anthropic, promet d'automatiser des tâches complexes en agissant de manière totalement autonome directement sur votre ordinateur. Cet article de ZDNet présente un retour d'expérience détaillé et honnête sur les capacités véritablement impressionnantes de cet outil d'automatisation nouvelle génération : navigation intelligente dans des interfaces, manipulation de fichiers, exécution de workflows multi-étapes.</p>
+              <p class="card-source">ZDNet</p>
+            </div>
+          </article>
+
+          <!-- Carte 7 : LeMonde Informatique Cowork -->
+          <article class="card" tabindex="0" role="button"
+                   data-url="https://www.lemondeinformatique.fr/actualites/lire-avec-cowork-anthropic-aide-les-developpeurs-a-s-organiser-99031.html"
+                   data-source="LeMondeInformatique"
+                   data-summary="Cowork, le nouvel outil développé par Anthropic, se positionne comme un assistant organisationnel complet et innovant pour les développeurs, allant bien au-delà de la simple génération de code qui caractérise la plupart des assistants IA actuels. L'article du Monde Informatique détaille en profondeur comment cet outil révolutionnaire aide les équipes de développement à structurer efficacement leurs projets logiciels, gérer les tâches complexes avec des dépendances multiples, et maintenir une vision d'ensemble claire et actualisée sur des codebases volumineuses comptant parfois des millions de lignes de code. Cowork peut analyser intelligemment l'architecture logicielle existante, suggérer des réorganisations de code pertinentes pour améliorer la maintenabilité, identifier les dépendances problématiques ou circulaires, et proposer des stratégies de refactoring adaptées. Cette approche orientée organisation et productivité représente une évolution significative dans la manière dont les développeurs peuvent tirer parti de l'IA au quotidien."
+                   data-image="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=200&fit=crop">
+            <div class="card-image">
+              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=200&fit=crop" alt="Équipe de développement" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div class="card-header">
+                <div class="card-logo" aria-hidden="true">LM</div>
+                <h4 class="card-title">Avec Cowork, Anthropic aide les développeurs à s'organiser</h4>
+              </div>
+              <p class="card-summary">Cowork, le nouvel outil développé par Anthropic, se positionne comme un assistant organisationnel complet et innovant pour les développeurs, allant bien au-delà de la simple génération de code qui caractérise la plupart des assistants IA actuels. L'article du Monde Informatique détaille en profondeur comment cet outil révolutionnaire aide les équipes de développement à structurer efficacement leurs projets logiciels et gérer les tâches complexes.</p>
+              <p class="card-source">LeMondeInformatique</p>
+            </div>
+          </article>
+
+          <!-- Carte 8 : Les Echos -->
+          <article class="card" tabindex="0" role="button"
+                   data-url="https://www.lesechos.fr/tech-medias/intelligence-artificielle/ia-et-code-le-metier-de-developpeur-nest-plus-le-meme-quil-y-a-cinq-ans-2210055"
+                   data-source="LesEchos"
+                   data-summary="En seulement cinq ans, le métier de développeur informatique a connu une transformation radicale et profonde sous l'impulsion spectaculaire de l'intelligence artificielle générative. Les Échos analysent cette évolution majeure qui redéfinit les fondements même de la profession : les développeurs passent désormais beaucoup moins de temps à écrire du code ligne par ligne de manière traditionnelle, et consacrent davantage d'énergie à concevoir l'architecture globale des systèmes, réviser et valider le code généré automatiquement par l'IA, et résoudre des problèmes complexes nécessitant créativité, intuition et expertise humaine. L'article examine également comment les entreprises adaptent leurs processus de recrutement et de formation pour tenir compte de ces nouvelles réalités. Les compétences recherchées évoluent rapidement : au-delà de la maîtrise technique pure, on valorise désormais la capacité à collaborer efficacement avec les outils d'IA, à évaluer la qualité du code généré et à maintenir une vision stratégique que les machines ne peuvent pas encore reproduire."
+                   data-image="https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=400&h=200&fit=crop">
+            <div class="card-image">
+              <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=400&h=200&fit=crop" alt="Évolution du développement" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div class="card-header">
+                <div class="card-logo" aria-hidden="true">LE</div>
+                <h4 class="card-title">IA et code : le métier de développeur n'est plus le même qu'il y a cinq ans</h4>
+              </div>
+              <p class="card-summary">En seulement cinq ans, le métier de développeur informatique a connu une transformation radicale et profonde sous l'impulsion spectaculaire de l'intelligence artificielle générative. Les Échos analysent cette évolution majeure qui redéfinit les fondements même de la profession : les développeurs passent désormais beaucoup moins de temps à écrire du code ligne par ligne de manière traditionnelle, et consacrent davantage d'énergie à concevoir l'architecture globale des systèmes, réviser et valider le code généré automatiquement par l'IA, et résoudre des problèmes complexes nécessitant créativité, intuition et expertise humaine.</p>
+              <p class="card-source">Les Echos</p>
+            </div>
+          </article>
+
+          <!-- Carte 9 : DevOps vs IA -->
+          <article class="card" tabindex="0" role="button"
+                   data-url="https://www.lemondeinformatique.fr/actualites/lire-devops-vs-ia-5-defis-a-relever-en-2026-99145.html"
+                   data-source="LeMondeInformatique"
+                   data-summary="L'intégration de l'intelligence artificielle dans les pratiques DevOps représente un défi majeur et multidimensionnel que les équipes techniques devront impérativement relever d'ici 2026. Le Monde Informatique identifie et analyse en profondeur cinq enjeux critiques pour cette convergence technologique : assurer la fiabilité et la reproductibilité des systèmes d'IA en environnement de production, gérer la complexité croissante des pipelines CI/CD intégrant des modèles d'IA avec leurs spécificités (versioning des modèles, gestion des datasets, monitoring de la dérive), maintenir un niveau élevé de sécurité et de conformité réglementaire lorsque l'IA prend des décisions autonomes sur l'infrastructure. L'article explore également les défis liés à l'observabilité des systèmes hybrides humain-IA et la nécessité de former les équipes DevOps aux particularités de l'IA. Ces transformations profondes nécessitent une adaptation significative des pratiques, des outils et des compétences des professionnels du domaine."
+                   data-image="https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=400&h=200&fit=crop">
+            <div class="card-image">
+              <img src="https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=400&h=200&fit=crop" alt="DevOps et automatisation" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div class="card-header">
+                <div class="card-logo" aria-hidden="true">LM</div>
+                <h4 class="card-title">DevOps vs IA : 5 défis à relever en 2026</h4>
+              </div>
+              <p class="card-summary">L'intégration de l'intelligence artificielle dans les pratiques DevOps représente un défi majeur et multidimensionnel que les équipes techniques devront impérativement relever d'ici 2026. Le Monde Informatique identifie et analyse en profondeur cinq enjeux critiques pour cette convergence technologique : assurer la fiabilité et la reproductibilité des systèmes d'IA en production, gérer la complexité croissante des pipelines CI/CD intégrant des modèles d'IA.</p>
+              <p class="card-source">LeMondeInformatique</p>
+            </div>
+          </article>
+
+          <!-- Carte 10 : Claude Code 8h -->
+          <article class="card" tabindex="0" role="button"
+                   data-url="https://www.zdnet.fr/pratique/jai-utilise-claude-code-pour-coder-une-application-mac-en-8-heures-mais-jai-du-vraiment-le-manager-488688.html"
+                   data-source="ZDNet"
+                   data-summary="Un développeur expérimenté partage son expérience fascinante et instructive de création d'une application Mac complète et fonctionnelle en seulement 8 heures grâce à l'assistance puissante de Claude Code, l'outil de développement d'Anthropic. L'article détaille méticuleusement le processus étape par étape : définition précise du cahier des charges et des fonctionnalités attendues, génération de l'architecture de base et de la structure du projet, implémentation itérative des différentes fonctionnalités, gestion des bugs et des comportements inattendus, tests et validation finale. L'auteur insiste cependant sur un point absolument crucial pour quiconque souhaiterait reproduire cette expérience : il a dû 'vraiment manager' l'IA tout au long du processus de développement. Cela signifie guider constamment l'outil, corriger ses erreurs, reformuler les demandes, valider chaque étape et maintenir une vision cohérente du projet. L'IA ne remplace donc pas le développeur mais amplifie considérablement sa productivité lorsqu'elle est correctement supervisée."
+                   data-image="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=200&fit=crop">
+            <div class="card-image">
+              <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=200&fit=crop" alt="Développement application Mac" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div class="card-header">
+                <div class="card-logo" aria-hidden="true">ZD</div>
+                <h4 class="card-title">J'ai utilisé Claude Code pour coder une application Mac en 8 heures, mais j'ai dû vraiment le manager</h4>
+              </div>
+              <p class="card-summary">Un développeur expérimenté partage son expérience fascinante et instructive de création d'une application Mac complète et fonctionnelle en seulement 8 heures grâce à l'assistance puissante de Claude Code, l'outil de développement d'Anthropic. L'article détaille méticuleusement le processus étape par étape : définition précise du cahier des charges, génération de l'architecture de base, implémentation itérative des fonctionnalités, gestion des bugs. L'auteur insiste sur un point crucial : il a dû 'vraiment manager' l'IA tout au long du processus.</p>
+              <p class="card-source">ZDNet</p>
+            </div>
+          </article>
+
         </div>
-</section>
+
+        <!-- Modal pour afficher le détail d'un article -->
+        <div id="article-modal" class="modal" aria-hidden="true">
+          <div class="modal-overlay" data-close></div>
+          <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button class="modal-close" aria-label="Fermer">×</button>
+            <div class="modal-header">
+              <div class="modal-logo"></div>
+              <h2 id="modal-title" class="modal-title"></h2>
+            </div>
+            <p class="modal-summary"></p>
+            <div class="modal-actions">
+              <a class="btn-open" target="_blank" rel="noopener noreferrer">Lire l'article</a>
+            </div>
+          </div>
+        </div>
+        </div>
+        </section>
+        </section>
+    </main>
       <p>Le contenu est toujours en cours d'ajout, revenez donc plus tard pour en voir plus.</p>
-            <p>Dernière date de mise à jour le 24/09/2025</p>
+            <p>Dernière date de mise à jour le 01/02/2026</p>
     <br>
   <footer>
     <p>&copy; 2025 - Télio Desmet</p>
