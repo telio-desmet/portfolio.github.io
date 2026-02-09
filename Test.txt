@@ -1,0 +1,99 @@
+      <!-- Section Outils de veille - Après les articles -->
+      <section id="outils-veille" style="margin-top: 3rem; margin-bottom: 2rem;">
+        <h3>🛠️ Mes outils de veille technologique</h3>
+        <p style="text-align: center; margin-bottom: 2rem;">Les outils que j'utilise pour rester informé des dernières évolutions en IA et développement :</p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem;">
+
+          <!-- Google Alertes -->
+          <div style="text-align: center; padding: 1.5rem; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; transition: transform 0.3s ease;">
+            <div style="width: 80px; height: 80px; margin: 0 auto 1rem; border-radius: 50%; background: linear-gradient(135deg, #4285f4, #ea4335); display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 8px 25px rgba(0,0,0,0.3);">
+              🔔
+            </div>
+            <h4 style="margin: 0.5rem 0; font-size: 1.1rem; color: var(--text-color);">Google Alertes</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0.5rem 0; line-height: 1.4;">Notifications automatiques par email sur vos mots-clés</p>
+            <a href="https://www.google.com/alerts" target="_blank" rel="noopener noreferrer" style="display: inline-block; margin-top: 1rem; padding: 10px 20px; background: linear-gradient(135deg, var(--secondary-color), var(--accent-color)); color: white; text-decoration: none; border-radius: 25px; font-weight: 600; font-size: 0.9rem; transition: var(--transition);">Découvrir</a>
+          </div>
+
+          <!-- Pearltrees -->
+          <div style="text-align: center; padding: 1.5rem; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; transition: transform 0.3s ease;">
+            <div style="width: 80px; height: 80px; margin: 0 auto 1rem; border-radius: 50%; background: linear-gradient(135deg, #00a99d, #00c9b7); display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 8px 25px rgba(0,0,0,0.3);">
+              🌳
+            </div>
+            <h4 style="margin: 0.5rem 0; font-size: 1.1rem; color: var(--text-color);">Pearltrees</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0.5rem 0; line-height: 1.4;">Organisation visuelle de vos ressources en arborescence</p>
+            <a href="https://www.pearltrees.com" target="_blank" rel="noopener noreferrer" style="display: inline-block; margin-top: 1rem; padding: 10px 20px; background: linear-gradient(135deg, var(--secondary-color), var(--accent-color)); color: white; text-decoration: none; border-radius: 25px; font-weight: 600; font-size: 0.9rem; transition: var(--transition);">Découvrir</a>
+          </div>
+
+          <!-- Flipboard -->
+          <div style="text-align: center; padding: 1.5rem; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; transition: transform 0.3s ease;">
+            <div style="width: 80px; height: 80px; margin: 0 auto 1rem; border-radius: 50%; background: linear-gradient(135deg, #e62429, #c0202a); display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 8px 25px rgba(0,0,0,0.3);">
+              📰
+            </div>
+            <h4 style="margin: 0.5rem 0; font-size: 1.1rem; color: var(--text-color);">Flipboard</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0.5rem 0; line-height: 1.4;">Magazine personnalisé agrégeant vos sources favorites</p>
+            <a href="https://flipboard.com" target="_blank" rel="noopener noreferrer" style="display: inline-block; margin-top: 1rem; padding: 10px 20px; background: linear-gradient(135deg, var(--secondary-color), var(--accent-color)); color: white; text-decoration: none; border-radius: 25px; font-weight: 600; font-size: 0.9rem; transition: var(--transition);">Découvrir</a>
+          </div>
+
+          <!-- Feedly -->
+          <div style="text-align: center; padding: 1.5rem; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; transition: transform 0.3s ease;">
+            <div style="width: 80px; height: 80px; margin: 0 auto 1rem; border-radius: 50%; background: linear-gradient(135deg, #2bb24c, #239a3d); display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 8px 25px rgba(0,0,0,0.3);">
+              📡
+            </div>
+            <h4 style="margin: 0.5rem 0; font-size: 1.1rem; color: var(--text-color);">Feedly</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0.5rem 0; line-height: 1.4;">Lecteur RSS centralisé pour tous vos sites tech</p>
+            <a href="https://feedly.com" target="_blank" rel="noopener noreferrer" style="display: inline-block; margin-top: 1rem; padding: 10px 20px; background: linear-gradient(135deg, var(--secondary-color), var(--accent-color)); color: white; text-decoration: none; border-radius: 25px; font-weight: 600; font-size: 0.9rem; transition: var(--transition);">Découvrir</a>
+          </div>
+
+          <!-- Pocket -->
+          <div style="text-align: center; padding: 1.5rem; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; transition: transform 0.3s ease;">
+            <div style="width: 80px; height: 80px; margin: 0 auto 1rem; border-radius: 50%; background: linear-gradient(135deg, #ef4056, #d92e43); display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 8px 25px rgba(0,0,0,0.3);">
+              💾
+            </div>
+            <h4 style="margin: 0.5rem 0; font-size: 1.1rem; color: var(--text-color);">Pocket</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0.5rem 0; line-height: 1.4;">Sauvegarde d'articles pour lecture différée hors ligne</p>
+            <a href="https://getpocket.com" target="_blank" rel="noopener noreferrer" style="display: inline-block; margin-top: 1rem; padding: 10px 20px; background: linear-gradient(135deg, var(--secondary-color), var(--accent-color)); color: white; text-decoration: none; border-radius: 25px; font-weight: 600; font-size: 0.9rem; transition: var(--transition);">Découvrir</a>
+          </div>
+
+          <!-- Reddit -->
+          <div style="text-align: center; padding: 1.5rem; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; transition: transform 0.3s ease;">
+            <div style="width: 80px; height: 80px; margin: 0 auto 1rem; border-radius: 50%; background: linear-gradient(135deg, #ff4500, #ff5700); display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 8px 25px rgba(0,0,0,0.3);">
+              💬
+            </div>
+            <h4 style="margin: 0.5rem 0; font-size: 1.1rem; color: var(--text-color);">Reddit</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0.5rem 0; line-height: 1.4;">Communautés actives de développeurs et experts en IA</p>
+            <a href="https://www.reddit.com/r/programming/" target="_blank" rel="noopener noreferrer" style="display: inline-block; margin-top: 1rem; padding: 10px 20px; background: linear-gradient(135deg, var(--secondary-color), var(--accent-color)); color: white; text-decoration: none; border-radius: 25px; font-weight: 600; font-size: 0.9rem; transition: var(--transition);">Découvrir</a>
+          </div>
+
+          <!-- Hacker News -->
+          <div style="text-align: center; padding: 1.5rem; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; transition: transform 0.3s ease;">
+            <div style="width: 80px; height: 80px; margin: 0 auto 1rem; border-radius: 50%; background: linear-gradient(135deg, #ff6600, #ff8533); display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 8px 25px rgba(0,0,0,0.3);">
+              🔥
+            </div>
+            <h4 style="margin: 0.5rem 0; font-size: 1.1rem; color: var(--text-color);">Hacker News</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0.5rem 0; line-height: 1.4;">Agrégateur tech avec discussions d'experts</p>
+            <a href="https://news.ycombinator.com" target="_blank" rel="noopener noreferrer" style="display: inline-block; margin-top: 1rem; padding: 10px 20px; background: linear-gradient(135deg, var(--secondary-color), var(--accent-color)); color: white; text-decoration: none; border-radius: 25px; font-weight: 600; font-size: 0.9rem; transition: var(--transition);">Découvrir</a>
+          </div>
+
+          <!-- Dev.to -->
+          <div style="text-align: center; padding: 1.5rem; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; transition: transform 0.3s ease;">
+            <div style="width: 80px; height: 80px; margin: 0 auto 1rem; border-radius: 50%; background: linear-gradient(135deg, #3b49df, #0a0a0a); display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 8px 25px rgba(0,0,0,0.3);">
+              👨‍💻
+            </div>
+            <h4 style="margin: 0.5rem 0; font-size: 1.1rem; color: var(--text-color);">Dev.to</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0.5rem 0; line-height: 1.4;">Plateforme de blogging pour développeurs</p>
+            <a href="https://dev.to" target="_blank" rel="noopener noreferrer" style="display: inline-block; margin-top: 1rem; padding: 10px 20px; background: linear-gradient(135deg, var(--secondary-color), var(--accent-color)); color: white; text-decoration: none; border-radius: 25px; font-weight: 600; font-size: 0.9rem; transition: var(--transition);">Découvrir</a>
+          </div>
+
+          <!-- Twitter/X -->
+          <div style="text-align: center; padding: 1.5rem; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; transition: transform 0.3s ease;">
+            <div style="width: 80px; height: 80px; margin: 0 auto 1rem; border-radius: 50%; background: linear-gradient(135deg, #1da1f2, #0d8bd9); display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 8px 25px rgba(0,0,0,0.3);">
+              🐦
+            </div>
+            <h4 style="margin: 0.5rem 0; font-size: 1.1rem; color: var(--text-color);">Twitter/X</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0.5rem 0; line-height: 1.4;">Suivi des experts en IA et annonces en temps réel</p>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" style="display: inline-block; margin-top: 1rem; padding: 10px 20px; background: linear-gradient(135deg, var(--secondary-color), var(--accent-color)); color: white; text-decoration: none; border-radius: 25px; font-weight: 600; font-size: 0.9rem; transition: var(--transition);">Découvrir</a>
+          </div>
+
+        </div>
+      </section>

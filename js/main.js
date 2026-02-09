@@ -84,8 +84,8 @@ document.addEventListener('DOMContentLoaded', function () {
     lastFocused = document.activeElement;
     if (modalClose) modalClose.focus();
 
-    // empêcher le scroll du body
-    document.body.style.overflow = 'hidden';
+    // NE PAS bloquer le scroll - permettre le défilement dans la modal
+    // document.body.style.overflow = 'hidden';
 
     // écoute clavier pour trap focus
     document.addEventListener('keydown', trapFocus);
@@ -99,8 +99,8 @@ document.addEventListener('DOMContentLoaded', function () {
   function closeModal() {
     modal.setAttribute('aria-hidden', 'true');
     modal.style.display = 'none';
-    // restaurer le scroll
-    document.body.style.overflow = '';
+    // restaurer le scroll (plus nécessaire car on ne le bloque plus)
+    // document.body.style.overflow = '';
     // restaurer visibilité pour lecteurs d'écran
     setAriaHiddenOnPage(false);
     // remettre le focus sur l'élément précédemment actif
