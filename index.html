@@ -11,7 +11,7 @@
     <h1>Bienvenue sur mon portfolio</h1>
   </header>
 
-  <div id="header" id="top" style="text-align: center;">
+  <div id="header" style="text-align: center;">
     <nav>
         <ul>
             <li><a href="index.html" class="active">Accueil</a></li>
@@ -26,10 +26,9 @@
     </nav>
   </div>
 
+  <br>
+
   <main>
-
-    <br>
-
     <section id="content">
       <h2>Bonjour !</h2>
       <p>Bienvenue sur mon site web.</p>
@@ -37,6 +36,10 @@
       <p>N'hésitez pas à naviguer dans les menus grâce à la barre de navigation ci-dessus.</p>
       <p>Pour plus de renseignements, rendez-vous dans l'onglet « Me Contacter », d'ici, vous pourrez me joindre directement par mail depuis le site.</p>
 
+      <div style="text-align: center; margin-top: 2rem;">
+        <a href="contact.html" class="btn-primary" style="display: inline-block; padding: 14px 32px; background: linear-gradient(135deg, var(--secondary-color), var(--accent-color)); color: white; text-decoration: none; border-radius: 30px; font-weight: 700; font-size: 1rem; transition: var(--transition); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); margin: 0 0.5rem;">Me contacter</a>
+        <a href="cv.html" class="btn-secondary" style="display: inline-block; padding: 14px 32px; background: rgba(255, 255, 255, 0.1); color: var(--text-color); text-decoration: none; border-radius: 30px; font-weight: 700; font-size: 1rem; transition: var(--transition); border: 2px solid var(--secondary-color); margin: 0 0.5rem;">Voir mon CV</a>
+      </div>
     </section>
 
     <section id="projects">
@@ -47,7 +50,7 @@
         <div style="border: 1px solid #ddd; border-radius: 8px; padding: 20px; background: #f9f9f9;">
           <h3>🤖 Chatbot IA avec Gemma 3</h3>
           <p>Application web intégrant un modèle d'IA local Gemma 3-1B avec interface Flask et HTML/CSS/JavaScript.</p>
-          <p>Projet en cours de développement 🛠️</p>
+          <p style="color: var(--success-color); font-weight: 600;">Projet fini ✅</p>
           <p><strong>Technologies :</strong> Python, Flask, LangChain, Ollama, HTML/CSS/JS</p>
         </div>
         
@@ -55,78 +58,105 @@
         <div style="border: 1px solid #ddd; border-radius: 8px; padding: 20px; background: #f9f9f9;">
           <h3>🌐 Portfolio Web</h3>
           <p>Site web personnel développé en HTML/CSS pour présenter mon parcours et mes compétences.</p>
-          <p>Projet fini ✅</p>
+          <p style="color: var(--success-color); font-weight: 600;">Projet fini ✅</p>
           <p><strong>Technologies :</strong> HTML5, CSS3, JavaScript</p>
         </div>
 
-        <div style="border: 1px solid #ddd; border-radius: 8px; padding: 20px; background: #f9f9f9;">
+        <!-- Jeu Mario Wanted -->
+        <div style="background: var(--glass-bg); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); border-radius: var(--border-radius); padding: 2rem; transition: var(--transition); position: relative; overflow: hidden; box-shadow: 0 10px 40px var(--shadow-color);">
+          <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));"></div>
           <h3>🎮 Jeu Mario Wanted</h3>
           <p>Jeu similaire à Mario Wanted sur DS, ici jouable sous Windows</p>
-          <p>Projet en cours de développement 🛠️</p>
+          <p style="color: var(--success-color); font-weight: 600;">Projet fini ✅</p>
           <p><strong>Technologies :</strong> Java, Gradle</p>
-
         </div>
 
-          <div style="border: 1px solid #ddd; border-radius: 8px; padding: 20px; background: #f9f9f9;">
+        <!-- Calculatrice -->
+        <div style="background: var(--glass-bg); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); border-radius: var(--border-radius); padding: 2rem; transition: var(--transition); position: relative; overflow: hidden; box-shadow: 0 10px 40px var(--shadow-color);">
+          <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--warning-color), var(--accent-color));"></div>
           <h3>➕🟰 Calculatrice</h3>
           <p>Petit projet visant à créer une calculatrice en Java avec SimBuilder</p>
-          <p>Projet à venir ❌</p>
+          <p style="color: var(--accent-color); font-weight: 600;">Projet à venir ❌</p>
           <p><strong>Technologies :</strong> Java, SimBuilder</p>
-        
+        </div>
+
+        <!-- Application mobile -->
+        <div style="background: var(--glass-bg); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); border-radius: var(--border-radius); padding: 2rem; transition: var(--transition); position: relative; overflow: hidden; box-shadow: 0 10px 40px var(--shadow-color);">
+          <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));"></div>
+          <h3>📱 Application mobile</h3>
+          <p>Projet fait en Dart avec Flutter pour conçevoir une application mobile de gestion de stocks</p>
+          <p>Fait pour apprendre le développement mobile</p>
+          <p>Projet fini ✅</p>
+          <p><strong>Technologies :</strong>  Dart, Android Studio, Flutter</p>
+        </div>
+
+        <!-- Site web avec Symfony 1 -->
+        <div style="background: var(--glass-bg); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); border-radius: var(--border-radius); padding: 2rem; transition: var(--transition); position: relative; overflow: hidden; box-shadow: 0 10px 40px var(--shadow-color);">
+          <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));"></div>
+          <h3>👨🏻‍💻 Site web avec Symfony</h3>
+          <p>Divers sites web PHP réalisés avec l'outil Symfony </p>
+          <p>Fait dans l'objectif d'apprendre à utiliser cet outil</p>
+          <p>Projet fini ✅</p>
+          <p><strong>Technologies :</strong> PHP, Twig, Symfony</p>
+        </div>
+
+        <!-- Site web avec Symfony 2 -->
+        <div style="background: var(--glass-bg); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); border-radius: var(--border-radius); padding: 2rem; transition: var(--transition); position: relative; overflow: hidden; box-shadow: 0 10px 40px var(--shadow-color);">
+          <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));"></div>
+          <h3>👨🏻‍💻 Site web avec Symfony</h3>
+          <p>Site web PHP de gestion de films réalisés avec l'outil Symfony </p>
+          <p>Cet outil permet de trier dives films et séries, rechercher, mettre une note, ajouter aux favoris, avec une gestion de comptes et autre</p>
+          <p>Projet fini ✅</p>
+          <p><strong>Technologies :</strong> PHP, Twig, Symfony</p>
+        </div>
+
       </div>
-
-          <div style="border: 1px solid #ddd; border-radius: 8px; padding: 20px; background: #f9f9f9;">
-              <h3>📱 Application mobile</h3>
-              <p>Projet fait en Dart avec Flutter pour conçevoir une application mobile de gestion de stocks</p>
-              <p>Fait pour apprendre le développement mobile</p>
-              <p>Projet en cours de développement 🛠️</p>
-              <p><strong>Technologies :</strong>  Dart, Android Studio, Flutter</p>
-
-          </div>
-
-          <div style="border: 1px solid #ddd; border-radius: 8px; padding: 20px; background: #f9f9f9;">
-              <h3>👨🏻‍💻 Site web avec Symfony</h3>
-              <p>Divers sites web PHP réalisés avec l'outil Symfony </p>
-              <p>Fait dans l'objectif d'apprendre à utiliser cet outil</p>
-              <p>Projet en cours de développement 🛠️</p>
-              <p><strong>Technologies :</strong> PHP, Twig, Symfony</p>
-
-          </div>
     </section>
 
     <section id="formation">
       <h2>Ma formation</h2>
       <p>Actuellement en BTS SIO, option SLAM.</p>
       <p>Formation axée sur le développement web et la gestion de projets informatiques.</p>
+
+      <div style="text-align: center; margin-top: 2rem;">
+        <a href="formation.html" class="btn-primary" style="display: inline-block; padding: 14px 32px; background: linear-gradient(135deg, var(--secondary-color), var(--accent-color)); color: white; text-decoration: none; border-radius: 30px; font-weight: 700; font-size: 1rem; transition: var(--transition); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); margin: 0 0.5rem;">En savoir plus sur ma formation</a>
+        <a href="diplomes.html" class="btn-secondary" style="display: inline-block; padding: 14px 32px; background: rgba(255, 255, 255, 0.1); color: var(--text-color); text-decoration: none; border-radius: 30px; font-weight: 700; font-size: 1rem; transition: var(--transition); border: 2px solid var(--secondary-color); margin: 0 0.5rem;">Voir mes diplômes</a>
+      </div>
     </section>
   </main>
 
   <br>
   
-  <section id="projects">
-      <h2>Mes Stages</h2>
-          <p>J'ai effectué plusieurs stages dans le domaine du développement web, où j'ai pu mettre en pratique mes compétences.</p>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+  <section id="stages" style="background: var(--card-bg); backdrop-filter: blur(25px); border: 1px solid var(--glass-border); border-radius: var(--border-radius); padding: 3rem; margin: 0 2rem 2.5rem 2rem; box-shadow: 0 20px 60px var(--shadow-color);">
+    <h2>Mes Stages</h2>
+    <p>J'ai effectué plusieurs stages dans le domaine du développement web, où j'ai pu mettre en pratique mes compétences.</p>
 
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
 
-        <div style="border: 1px solid #ddd; border-radius: 8px; padding: 20px; background: #f9f9f9;">
-          <h3>Aérodrome de Maubeuge La Salemagne</h3>
-          <p>Stage d'observation de la vie en entreprise dans un aérodrome.</p>
-          <p><strong>Année :</strong> Seconde</p>
-          <p><strong>Type de stage :</strong> Stage d'observation</p>
-
-        </div>
-
-          <div style="border: 1px solid #ddd; border-radius: 8px; padding: 20px; background: #f9f9f9;">
-          <h3>Agglomération Maubeuge Val De Sambre</h3>
-          <p>Stage de pratique au service développement de l'agglomération Maubeuge Val de Sambre.</p>
-          <p><strong>Année :</strong> Première année de BTS-SIO</p>
-          <p><strong>Type de stage :</strong> Stage de pratique</p>
-        
+      <!-- Stage Aérodrome -->
+      <div style="background: var(--glass-bg); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); border-radius: var(--border-radius); padding: 2rem; transition: var(--transition); position: relative; overflow: hidden; box-shadow: 0 10px 40px var(--shadow-color);">
+        <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));"></div>
+        <h3 style="color: var(--secondary-color); margin-bottom: 1rem;">✈️ Aérodrome de Maubeuge La Salemagne</h3>
+        <p>Stage d'observation de la vie en entreprise dans un aérodrome.</p>
+        <p><strong>Année :</strong> Seconde</p>
+        <p><strong>Type de stage :</strong> Stage d'observation</p>
       </div>
+
+      <!-- Stage Agglomération -->
+      <div style="background: var(--glass-bg); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); border-radius: var(--border-radius); padding: 2rem; transition: var(--transition); position: relative; overflow: hidden; box-shadow: 0 10px 40px var(--shadow-color);">
+        <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));"></div>
+        <h3 style="color: var(--secondary-color); margin-bottom: 1rem;">🏛️ Agglomération Maubeuge Val De Sambre</h3>
+        <p>Stage de pratique au service développement de l'agglomération Maubeuge Val de Sambre.</p>
+        <p><strong>Année :</strong> Première année de BTS-SIO</p>
+        <p><strong>Type de stage :</strong> Stage de pratique</p>
       </div>
-      <p>Pour en savoir plus, rendez-vous dans l'onglet "Mes Stages"</p>
-    </section>
+
+    </div>
+
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="stages.html" class="btn-primary" style="display: inline-block; padding: 14px 32px; background: linear-gradient(135deg, var(--secondary-color), var(--accent-color)); color: white; text-decoration: none; border-radius: 30px; font-weight: 700; font-size: 1rem; transition: var(--transition); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);">Découvrir mes stages en détail</a>
+    </div>
+  </section>
 
   <br>
   
