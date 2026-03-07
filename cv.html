@@ -1,8 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CV et lettre de motivation de Télio Desmet, étudiant en BTS SIO SLAM.">
   <title>Portfolio - Mon CV</title>
   <link rel="stylesheet" href="css/style8.css">
 </head>
@@ -12,41 +13,45 @@
   </header>
 
   <div id="header" style="text-align: center;">
-    <nav>
-        <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="diplomes.html">Mes diplômes</a></li>
-            <li><a href="formation.html">Présentation de ma formation</a></li>
-            <li><a href="stages.html">Mes stages</a></li>
-            <li><a href="cv.html" class="active">Mon CV</a></li>
-            <li><a href="veilletechno.html">Ma veille technologique</a></li>
-            <li><a href="presentationperso.html">Présentation personnelle</a></li>
-            <li><a href="contact.html">Me contacter</a></li>
-        </ul>
+    <nav aria-label="Navigation principale">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="diplomes.html">Mes diplômes</a></li>
+        <li><a href="formation.html">Présentation de ma formation</a></li>
+        <li><a href="stages.html">Mes stages</a></li>
+        <li><a href="cv.html" class="active">Mon CV</a></li>
+        <li><a href="veilletechno.html">Ma veille technologique</a></li>
+        <li><a href="presentationperso.html">Présentation personnelle</a></li>
+        <li><a href="contact.html">Me contacter</a></li>
+      </ul>
     </nav>
-</div>
-
-<br>
+  </div>
 
   <main>
     <div class="content-row">
       <section id="cv">
-          <h2>Le CV</h2>
-          <p>Voici mon CV au format PDF. Vous pouvez le télécharger librement en cliquant sur le bouton "Enregistrer"</p>
-            <embed src="Documents/PDF/CV.pdf" width="1010" height="1400" type="application/pdf"/>
+        <h2>Le CV</h2>
+        <p>Voici mon CV au format PDF. Vous pouvez le télécharger librement en cliquant sur le bouton "Enregistrer"</p>
+        <div class="embed-responsive">
+          <embed src="Documents/PDF/CV.pdf" type="application/pdf" title="CV de Télio Desmet">
+        </div>
       </section>
 
       <section id="motiv">
-          <h2>La lettre de motivation</h2>
-          <p>Voici ma lettre de motivation au format PDF. Vous pouvez le télécharger librement en cliquant sur le bouton "Enregistrer"</p>
-          <embed src="Documents/PDF/motiv.pdf" width="1010" height="1400" type="application/pdf"/>
+        <h2>La lettre de motivation</h2>
+        <p>Voici ma lettre de motivation au format PDF. Vous pouvez la télécharger librement en cliquant sur le bouton "Enregistrer"</p>
+        <div class="embed-responsive">
+          <embed src="Documents/PDF/motiv.pdf" type="application/pdf" title="Lettre de motivation de Télio Desmet">
+        </div>
       </section>
     </div>
   </main>
+
   <footer>
-    <p>&copy; 2025 - Télio Desmet</p>
+    <p>&copy; 2026 - Télio Desmet</p>
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/transitions.js"></script>
 </body>
 </html>
