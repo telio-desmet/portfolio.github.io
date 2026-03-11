@@ -1375,6 +1375,31 @@ section:nth-child(4) { animation-delay: 0.7s; }
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
 }
 
+.btn-download {
+    display: inline-block;
+    margin-top: 1.2rem;
+    padding: 14px 35px;
+    background: linear-gradient(135deg, var(--success-color), var(--secondary-color));
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    transition: var(--transition);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.5px;
+}
+
+.btn-download:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+    filter: brightness(1.15);
+}
+
+.btn-download:active {
+    transform: translateY(0) scale(0.98);
+}
+
 /* Modal plein écran sur mobile */
 .modal.fullscreen {
     padding: 0;
