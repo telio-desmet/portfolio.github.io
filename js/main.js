@@ -73,7 +73,14 @@ document.addEventListener('DOMContentLoaded', function () {
     if (modalLogo) modalLogo.textContent = logoText;
     if (modalTitle) modalTitle.textContent = title;
     if (modalSummary) modalSummary.textContent = summary;
-    if (btnOpen) btnOpen.href = url;
+    if (btnOpen) {
+      // masquer le bouton si la carte ne pointe vers aucun article
+      if (url === '#') btnOpen.style.display = 'none';
+      else {
+        btnOpen.style.display = '';
+        btnOpen.href = url;
+      }
+    }
 
     // affichage
     modal.setAttribute('aria-hidden', 'false');

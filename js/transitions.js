@@ -1,29 +1,16 @@
-// Transitions en glissement horizontal entre les pages du portfolio
+// ============================================================
+// Transitions entre les pages : un rideau plein écran qui vient
+// couvrir la page (survol éditorial) plutôt qu'un glissement brut.
+//  - au chargement : le rideau se soulève, la page se dévoile
+//  - au clic sur un lien interne : le rideau descend, puis on navigue
+//  - l'élément rideau est créé ici, aucun HTML n'a besoin de le déclarer
+// ============================================================
 (function () {
   'use strict';
 
-  var TRANSITION_DURATION = 400; // ms — doit correspondre aux animations CSS
+  var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Ordre des pages dans le menu de navigation
-  var PAGE_ORDER = [
-    'index.html',
-    'diplomes.html',
-    'formation.html',
-    'stages.html',
-    'cv.html',
-    'veilletechno.html',
-    'presentationperso.html',
-    'contact.html'
-  ];
-
-  // Récupérer l'index d'une page dans le menu
-  function getPageIndex(pathname) {
-    var filename = pathname.split('/').pop().toLowerCase() || 'index.html';
-    for (var i = 0; i < PAGE_ORDER.length; i++) {
-      if (filename === PAGE_ORDER[i]) return i;
-    }
-    return -1;
-  }
+  var CURTAIN_COVER_MS = 480; // durée de la descente avant navigation
 
   // Pages internes du portfolio (même origine, pas de hash seul, pas de PDF)
   function isInternalLink(anchor) {
@@ -39,56 +26,59 @@
     return true;
   }
 
-  // Au chargement, appliquer l'animation d'entrée selon la direction stockée
-  var direction = sessionStorage.getItem('slideDirection');
-  if (direction === 'left') {
-    document.body.classList.add('page-enter-left');
-  } else if (direction === 'right') {
-    document.body.classList.add('page-enter-right');
-  }
-  // Nettoyer après utilisation
-  sessionStorage.removeItem('slideDirection');
+  if (prefersReducedMotion) return; // navigation classique, sans animation
 
-  // Intercepter les clics sur les liens internes
+  // ---------- Création du rideau ----------
+  var curtain = document.createElement('div');
+  curtain.className = 'page-curtain';
+  curtain.setAttribute('aria-hidden', 'true');
+  curtain.id = 'page-curtain';
+  document.body.appendChild(curtain);
+
+  // ---------- Entrée : le rideau couvre puis se soulève ----------
+  function playCurtainIn() {
+    curtain.classList.remove('is-lifting', 'is-dropping');
+    curtain.classList.add('is-covering');
+
+    // Deux frames pour s'assurer que l'état "couvert" est dessiné
+    // avant de lancer la transition de soulèvement
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        curtain.classList.add('is-lifting');
+        document.body.classList.add('page-enter');
+        setTimeout(function () {
+          curtain.classList.remove('is-covering', 'is-lifting');
+        }, 850);
+      });
+    });
+  }
+
+  playCurtainIn();
+
+  // ---------- Sortie : le rideau descend puis on navigue ----------
   document.addEventListener('click', function (e) {
     var anchor = e.target.closest('a');
-    if (!anchor) return;
-    if (!isInternalLink(anchor)) return;
+    if (!anchor || !isInternalLink(anchor)) return;
 
     e.preventDefault();
     var targetUrl = anchor.href;
 
-    // Déterminer la direction du glissement
-    var currentIndex = getPageIndex(location.pathname);
-    var targetIndex = getPageIndex(anchor.pathname);
+    // Ne pas empiler des descentes si l'utilisateur reclique
+    if (curtain.classList.contains('is-dropping')) return;
 
-    if (targetIndex !== -1 && currentIndex !== -1 && targetIndex > currentIndex) {
-      // Navigation vers la droite → la page sort vers la gauche
-      document.body.classList.add('page-exit-left');
-      sessionStorage.setItem('slideDirection', 'right');
-    } else if (targetIndex !== -1 && currentIndex !== -1 && targetIndex < currentIndex) {
-      // Navigation vers la gauche → la page sort vers la droite
-      document.body.classList.add('page-exit-right');
-      sessionStorage.setItem('slideDirection', 'left');
-    } else {
-      // Fallback : glissement par défaut vers la gauche
-      document.body.classList.add('page-exit-left');
-      sessionStorage.setItem('slideDirection', 'right');
-    }
+    curtain.classList.remove('is-lifting', 'is-covering');
+    curtain.classList.add('is-dropping');
 
-    // Naviguer une fois l'animation terminée
     setTimeout(function () {
       window.location.href = targetUrl;
-    }, TRANSITION_DURATION);
+    }, CURTAIN_COVER_MS);
   });
 
-  // Gérer le retour arrière du navigateur (bouton précédent)
+  // ---------- Retour arrière du navigateur (cache bfcache) ----------
   window.addEventListener('pageshow', function (e) {
     if (e.persisted) {
-      // Page restaurée depuis le cache (retour arrière) : relancer l'entrée
-      document.body.classList.remove('page-exit-left');
-      document.body.classList.remove('page-exit-right');
-      document.body.classList.remove('page-exit');
+      document.body.classList.remove('page-enter');
+      playCurtainIn();
     }
   });
 })();

@@ -3,46 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Veille technologique de Télio Desmet : l'impact de l'intelligence artificielle sur le développement informatique.">
+  <meta name="theme-color" content="#0e090b">
   <title>Portfolio - Veille technologique</title>
-  <link rel="stylesheet" href="css/style8.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23e3b466'/%3E%3Cstop offset='1' stop-color='%23b9863c'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='28' font-weight='700' text-anchor='middle' fill='%23240808'%3ETD%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style9.css">
+  <script>
+    // Restaure le thème avant le premier rendu pour éviter le flash
+    try {
+      if (localStorage.getItem('pf-theme') === 'light') {
+        document.documentElement.classList.add('light-mode');
+      }
+    } catch (e) { /* localStorage indisponible */ }
+  </script>
 </head>
 <body>
-  <header>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="hero">
     <h1>Ma Veille technologique</h1>
   </header>
 
-  <div id="header" style="text-align: center;">
-    <nav aria-label="Navigation principale">
-      <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="diplomes.html">Mes diplômes</a></li>
-        <li><a href="formation.html">Présentation de mes formations</a></li>
-        <li><a href="stages.html">Mes stages</a></li>
-        <li><a href="cv.html">Mon CV</a></li>
-        <li><a href="veilletechno.html" class="active">Ma veille technologique</a></li>
-        <li><a href="presentationperso.html">Présentation personnelle</a></li>
-        <li><a href="contact.html">Me contacter</a></li>
-      </ul>
-    </nav>
-  </div>
+  <nav class="site-nav" aria-label="Navigation principale">
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+      <span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+      Menu
+    </button>
+    <ul id="nav-menu">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="diplomes.html">Mes diplômes</a></li>
+      <li><a href="formation.html">Présentation de mes formations</a></li>
+      <li><a href="stages.html">Mes stages</a></li>
+      <li><a href="cv.html">Mon CV</a></li>
+      <li><a href="veilletechno.html" class="active">Ma veille technologique</a></li>
+      <li><a href="presentationperso.html">Présentation personnelle</a></li>
+      <li><a href="contact.html">Me contacter</a></li>
+    </ul>
+  </nav>
 
+  <button class="theme-toggle" type="button" aria-label="Basculer le thème clair / sombre"></button>
+  <button class="to-top" type="button" aria-label="Revenir en haut de la page">↑</button>
 
-<br>
-
-    <main>
-        <section id="content">
-        <h2>Ma veille technologique :</h2>
+  <main>
+    <section id="content">
+      <h2>Ma veille technologique :</h2>
       <h3>Comment l'IA va changer le milieu du développement informatique.</h3>
 
-      <p style="text-align: center; font-size: 1.2rem; margin: 2rem auto; max-width: 900px; line-height: 1.8; padding: 1.5rem; background: rgba(255, 255, 255, 0.03); border-radius: 12px; border-left: 4px solid var(--secondary-color);">
+      <p class="note">
         Dans le cadre de ma formation en BTS SIO, j'ai effectué une veille technologique portant sur l'impact de l'intelligence artificielle dans le développement informatique. Cette page regroupe une sélection d'articles pertinents qui illustrent les transformations majeures du domaine de développement informaatique et les nouveaux outils qui change les pratiques usuelles du développement.
       </p>
 
-
-<section id="contact2">
-        <p>Voici les divers articles que j'ai trouvés :</p>
-        <div id="topL" style="text-align: center; border-radius: 110px;">
-        <div class="cards-grid" id="liens">
+      <p>Voici les divers articles que j'ai trouvés :</p>
+      <div class="cards-grid" id="liens">
           <!-- Carte 1 : Iquesta -->
           <article class="card" tabindex="0" role="button"
                    data-url="https://www.iquesta.com/Article-Lia-Et-Lavenir-Des-Developpeurs-En-Informatique-Quoi-Attendre-228.html"
@@ -269,26 +281,19 @@
             </div>
           </div>
         </div>
-          <div id="stages">
-            <p>Le contenu est constament en cours d'ajout, revenez donc plus tard pour en voir plus.</p>
-            <p>Dernière date de mise à jour le 11/03/2026</p>
-          </div>
 
-
+        <div class="note">
+          <p>Le contenu est constament en cours d'ajout, revenez donc plus tard pour en voir plus.</p>
+          <p>Dernière date de mise à jour le 04/11/2026</p>
         </div>
-        </section>
+      </section>
 
-          <section id="projects">
-            <h2>Outils de veille utilisés</h2>
-            <p>Au cours de ma veille j'ai utilisé divers outils comme Pearltrees ou Google Alertes.</p>
-            <p>Pour le cas de certains, il s'agit d'articles trouvés par chance sur internet que je considérait intéressant.</p>
-            <br>
-            <p>En revanche, comme pour le cas de l'article "Avec Cowork, Anthropic aide les développeurs à s'organiser" de Le Monde Informatique, ou d'autres, je privilégie d'essayer les outils présentés lorsque cela est possibe.</p>
-          </section>
-
-
-
-        </section>
+      <section id="projects">
+        <h2>Outils de veille utilisés</h2>
+        <p>Au cours de ma veille j'ai utilisé divers outils comme Pearltrees ou Google Alertes.</p>
+        <p>Pour le cas de certains, il s'agit d'articles trouvés par chance sur internet que je considérait intéressant.</p>
+        <p>En revanche, comme pour le cas de l'article "Avec Cowork, Anthropic aide les développeurs à s'organiser" de Le Monde Informatique, ou d'autres, je privilégie d'essayer les outils présentés lorsque cela est possibe.</p>
+      </section>
     </main>
 
   <footer>
@@ -296,6 +301,7 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/ui.js"></script>
   <script src="js/transitions.js"></script>
 </body>
 </html>
