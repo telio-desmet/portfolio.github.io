@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Présentation professionnelle de Télio Desmet : profil, CV, lettre de motivation, diplômes et stages.">
+  <meta name="theme-color" content="#0e090b">
+  <title>Portfolio - Présentation professionnelle</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23e3b466'/%3E%3Cstop offset='1' stop-color='%23b9863c'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='28' font-weight='700' text-anchor='middle' fill='%23240808'%3ETD%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style9.css">
+  <script>
+    // Restaure le thème avant le premier rendu pour éviter le flash
+    try {
+      if (localStorage.getItem('pf-theme') === 'light') {
+        document.documentElement.classList.add('light-mode');
+      }
+    } catch (e) { /* localStorage indisponible */ }
+  </script>
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="hero">
+    <h1>Présentation professionnelle</h1>
+    <div class="rotating-words" data-rotator>
+      <span>Mon parcours, mes diplômes et mes stages</span>
+      <span>CV et lettre de motivation</span>
+      <span>Étudiant en Bachelor 3 — développement web</span>
+    </div>
+  </header>
+
+  <nav class="site-nav" aria-label="Navigation principale">
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+      <span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+      Menu
+    </button>
+    <ul id="nav-menu">
+      <li><a href="presentation-professionnelle.html" class="active">Présentation professionnelle</a></li>
+      <li><a href="presentation-bts.html">Présentation de mes formations</a></li>
+      <li><a href="presentationperso.html">Présentation personnelle</a></li>
+      <li><a href="contact.html">Me contacter</a></li>
+    </ul>
+  </nav>
+
+  <button class="theme-toggle" type="button" aria-label="Basculer le thème clair / sombre"></button>
+  <button class="to-top" type="button" aria-label="Revenir en haut de la page">↑</button>
+
+  <main>
+    <nav class="subnav" aria-label="Sommaire de la page">
+      <a href="#profil">Profil</a>
+      <a href="#cv">CV</a>
+      <a href="#diplomes">Diplômes</a>
+      <a href="#stages">Stages</a>
+    </nav>
+
+    <section id="profil">
+      <h2>Mon profil</h2>
+      <p>Je m'appelle Télio Desmet, j'ai 20 ans. Diplômé d'un BTS SIO (Services Informatiques aux Organisations) option SLAM (Solutions Logicielles et Applications Métiers) en 2026, je suis à présent en Bachelor 3 Développement Web.</p>
+      <p>Curieux et motivé, j'aime concevoir des applications et des sites web utiles, découvrir de nouvelles technologies et mettre en pratique mes compétences sur des projets concrets. Mes stages m'ont permis de confronter cette formation au monde professionnel, aussi bien en développement qu'en administration de systèmes et de réseaux.</p>
+      <ul class="info-list">
+        <li><p><strong>Formation actuelle :</strong> Bachelor 3 Développement Web</p></li>
+        <li><p><strong>Diplôme :</strong> BTS SIO option SLAM — obtenu en 2026</p></li>
+        <li><p><strong>Localisation :</strong> Aulnoye-Aymeries, Nord de la France</p></li>
+        <li><p><strong>Langues :</strong> français, anglais (TOEIC et Cambridge)</p></li>
+      </ul>
+      <div class="cta-row">
+        <a href="#cv" class="btn-primary">Voir mon CV</a>
+        <a href="contact.html" class="btn-secondary">Me contacter</a>
+      </div>
+    </section>
+
+    <div class="content-row">
+      <section id="cv">
+        <h2>Mon CV</h2>
+        <p>Voici mon CV au format PDF. Vous pouvez le consulter ci-dessous ou le télécharger librement en cliquant sur le bouton de téléchargement.</p>
+        <div class="embed-responsive">
+          <embed src="Documents/PDF/CV.pdf" type="application/pdf" title="CV de Télio Desmet" loading="lazy">
+        </div>
+        <div class="cta-row">
+          <a href="Documents/PDF/CV.pdf" download class="btn-download">Télécharger le CV</a>
+        </div>
+      </section>
+
+      <section id="motivation">
+        <h2>Ma lettre de motivation</h2>
+        <p>Voici ma lettre de motivation au format PDF. Vous pouvez la consulter ci-dessous ou la télécharger librement en cliquant sur le bouton de téléchargement.</p>
+        <div class="embed-responsive">
+          <embed src="Documents/PDF/motiv.pdf" type="application/pdf" title="Lettre de motivation de Télio Desmet" loading="lazy">
+        </div>
+        <div class="cta-row">
+          <a href="Documents/PDF/motiv.pdf" download class="btn-download">Télécharger la lettre de motivation</a>
+        </div>
+      </section>
+    </div>
+
+    <section id="diplomes">
+      <h2>Mes diplômes</h2>
+
+      <h3>BTS SIO — spécialité SLAM</h3>
+      <p>Le BTS SIO (Services Informatiques aux Organisations), spécialité SLAM (Solutions Logicielles et Applications Métiers), forme au développement de logiciels et d'applications mobiles ou web.</p>
+      <p>Diplôme obtenu en 2026.</p>
+
+      <hr>
+
+      <h3>Lycée</h3>
+      <p>Spécialités Mathématiques et LLCER-AMC, avec la spécialité Physique-Chimie suivie puis abandonnée.</p>
+      <ul class="info-list">
+        <li><p>Obtention du Baccalauréat Général en 2024, avec mention Assez Bien</p></li>
+        <li><p>Obtention du Baccalauréat de français</p></li>
+      </ul>
+
+      <hr>
+
+      <h3>Collège</h3>
+      <ul class="info-list">
+        <li><p>Obtention du Diplôme National du Brevet, avec mention Très Bien</p></li>
+      </ul>
+
+      <hr>
+
+      <h3>Autres certifications</h3>
+      <ul class="info-list">
+        <li><p>Certification d'anglais Cambridge</p></li>
+        <li><p>Certification d'anglais TOEIC</p></li>
+      </ul>
+    </section>
+
+    <section id="stages">
+      <h2>Mes stages</h2>
+      <p>Au cours de ma scolarité et de ma formation, j'ai eu l'occasion de réaliser plusieurs stages qui m'ont permis d'acquérir une expérience précieuse dans divers domaines, et surtout dans celui du développement informatique.</p>
+      <p>Ces stages m'ont permis de mettre en pratique les compétences acquises pendant ma formation et de découvrir le monde professionnel. Vous trouverez ci-dessous un résumé de chaque expérience, puis leur présentation détaillée.</p>
+
+      <div class="stage-grid">
+        <article class="stage-card">
+          <span class="badge badge-info">Stage d'observation</span>
+          <h3>Aérodrome de Maubeuge — La Salemagne</h3>
+          <p>Découverte de la gestion d'un aérodrome et des systèmes informatiques utilisés dans le milieu aéronautique.</p>
+          <p><strong>Durée :</strong> 2 semaines</p>
+        </article>
+
+        <article class="stage-card">
+          <span class="badge badge-info">Stage de pratique</span>
+          <h3>Agglomération Maubeuge Val de Sambre</h3>
+          <p>Stage au sein des services techniques et de développement : maintenance informatique et création de chatbots IA.</p>
+          <p><strong>Durée :</strong> 6 semaines</p>
+        </article>
+
+        <article class="stage-card">
+          <span class="badge badge-info">Stage de pratique</span>
+          <h3>Second stage à l'Agglomération Maubeuge Val de Sambre</h3>
+          <p>Approfondissement du développement informatique et découverte d'outils de déploiement et de réseau.</p>
+          <p><strong>Durée :</strong> 5 semaines</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="stage-salemagne">
+      <h2>Stage à l'aérodrome de Maubeuge — La Salemagne</h2>
+      <div class="iframe-responsive">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2876.6388341930638!2d4.031057076698231!3d50.30752209764456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c241876aaaaaab%3A0x7c8208f1c3ee2f87!2sA%C3%A9rodrome%20de%20Maubeuge%20-%20Vieux-Reng%20-%20%C3%89lesmes!5e1!3m2!1sfr!2sfr!4v1755019983062!5m2!1sfr!2sfr" title="Carte Google Maps - Aérodrome de Maubeuge" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <hr>
+      <p>2 semaines durant, j'ai effectué un stage à l'aérodrome de Maubeuge. Au cours de ce stage, j'ai pu découvrir les spécificités de la gestion d'un aérodrome ainsi que les nombreux systèmes informatiques employés dans ce milieu.</p>
+      <p>J'ai pu découvrir les systèmes de gestion de la circulation aérienne, ainsi que les systèmes de communication entre les pilotes et le personnel au sol.</p>
+      <p>J'ai également eu l'occasion de participer à des activités pratiques, telles que la gestion des pistes et des taxiways, ainsi que la coordination des mouvements d'aéronefs sur le terrain.</p>
+      <p>Ce stage m'a permis de mieux comprendre les enjeux de la sécurité aérienne et de la gestion des infrastructures aéroportuaires, ainsi que les systèmes informatiques tels que les serveurs et les parcs informatiques de ce milieu.</p>
+      <p>J'ai aussi découvert les différents types d'aéronefs et leurs caractéristiques techniques, ainsi que les procédures de maintenance et de sécurité associées.</p>
+      <p>Enfin, j'ai pu observer le travail des équipes de contrôle aérien et de sécurité, ainsi que leur rôle essentiel dans le bon fonctionnement de l'aérodrome.</p>
+      <p>Ce stage m'a permis de développer mes compétences en gestion de projet, en communication et en travail d'équipe, tout en me familiarisant avec les spécificités du secteur aéronautique.</p>
+    </section>
+
+    <section id="stage-amvs-1">
+      <h2>Stage au service informatique de l'Agglomération Maubeuge Val de Sambre</h2>
+      <div class="iframe-responsive">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d862.4943926235597!2d3.976185561113335!3d50.277950345038924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c269d5283cd4fb%3A0x8fead6bc45955096!2sSi%C3%A8ge%20-%20Communaut%C3%A9%20d&#39;Agglom%C3%A9ration%20Maubeuge%20Val%20de%20Sambre!5e1!3m2!1sfr!2sfr!4v1755020344522!5m2!1sfr!2sfr" title="Carte Google Maps - Agglomération Maubeuge Val de Sambre" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <hr>
+      <p>J'ai réalisé un stage de 6 semaines à l'Agglomération de Maubeuge Val de Sambre, au cours duquel j'ai été placé dans deux services informatiques : la section service technique et la section développement.</p>
+      <p>La section service technique vise à la réparation, à l'entretien et à la maintenance des infrastructures et du matériel de l'agglomération, tandis que le service de développement vise à la création de logiciels et de sites web de cette même agglomération.</p>
+      <p>Au cours de ce stage, j'ai pu découvrir les différents aspects de la gestion des infrastructures informatiques, ainsi que les outils et technologies utilisés pour assurer leur bon fonctionnement.</p>
+      <p>J'ai également eu l'occasion de participer à des projets de développement de logiciels et d'applications, en utilisant des langages de programmation tels que Python, le HTML-CSS, le Java et le PHP.</p>
+      <p>La tâche qui m'a été confiée au service de développement consistait à créer et tester divers chatbots IA permettant de simplifier différentes tâches au sein de l'agglomération.</p>
+      <p>Au service technique, j'ai reçu diverses tâches de maintenance : entretien des serveurs, mise en place et entretien d'un serveur de test, ou encore entretien et réparation, sur le terrain ou au bureau, des ordinateurs utilisés par les travailleurs.</p>
+      <p>Ce stage m'a permis de développer mes compétences en gestion de projet, en communication et en travail d'équipe, tout en me familiarisant avec les spécificités du secteur informatique en entreprise.</p>
+    </section>
+
+    <section id="stage-amvs-2">
+      <h2>Second stage à l'Agglomération Maubeuge Val de Sambre</h2>
+      <div class="iframe-responsive">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d862.4943926235597!2d3.976185561113335!3d50.277950345038924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c269d5283cd4fb%3A0x8fead6bc45955096!2sSi%C3%A8ge%20-%20Communaut%C3%A9%20d&#39;Agglom%C3%A9ration%20Maubeuge%20Val%20de%20Sambre!5e1!3m2!1sfr!2sfr!4v1755020344522!5m2!1sfr!2sfr" title="Carte Google Maps - Agglomération Maubeuge Val de Sambre" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <hr>
+      <p>J'ai réalisé un second stage de 5 semaines à l'Agglomération Maubeuge Val de Sambre, au cours duquel j'ai eu l'occasion de participer à des projets différents, d'approfondir mes compétences en développement informatique et de manipuler certains outils de réseau.</p>
+      <p>Cette fois-ci, j'ai été placé uniquement au sein du service de développement. Néanmoins, lors de mon arrivée, la tâche en cours consistait à déployer un serveur permettant le boot en PXE d'une salle d'ordinateurs dédiée à l'apprentissage.</p>
+      <p>Ainsi, j'ai eu l'occasion de manipuler des outils de réseau tels que FOG, WDS, Ubuntu Server, des NAS Synology et autres.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 - Télio Desmet</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/transitions.js"></script>
+</body>
+</html>

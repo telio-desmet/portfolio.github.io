@@ -582,6 +582,36 @@ nav.site-nav.open .nav-toggle-bars span:nth-child(1) { transform: translateY(6px
 nav.site-nav.open .nav-toggle-bars span:nth-child(2) { opacity: 0; }
 nav.site-nav.open .nav-toggle-bars span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
+/* Sommaire interne d'une page (ancres) */
+.subnav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem;
+  padding: .45rem;
+  background: var(--surface);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--border-radius);
+}
+
+.subnav a {
+  display: inline-flex;
+  align-items: center;
+  padding: .45rem .85rem;
+  border-radius: var(--nav-radius);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: .76rem;
+  letter-spacing: .02em;
+  text-decoration: none;
+  transition: color .18s ease, background .18s ease;
+}
+
+.subnav a:hover,
+.subnav a:focus-visible {
+  color: var(--accent-color);
+  background: var(--card-bg);
+}
+
 /* ============================================================
    STRUCTURE : main, sections, titres, contenus
    ============================================================ */
