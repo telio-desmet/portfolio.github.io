@@ -42,3 +42,13 @@ ___
 
 - Ajout de contenu dans la page "Veille technologique"
 - Ajout de contenu dans la page d'accueil section "Projects"
+
+---
+
+### Mise à jour 1.4
+
+- Regroupement des pages "CV", "Mes diplômes" et "Mes stages" dans une nouvelle page "Présentation professionnelle" (profil, CV, lettre de motivation, stages)
+- Remplacement des pages "Mes diplômes" et "Présentation du BTS SIO" par une page unique "Mes formations" (présentation du BTS, spécialités SLAM / SISR, cybersécurité, diplômes obtenus)
+- Regroupement de la "Présentation personnelle" et de la "Veille technologique" sur une seule page
+- Sommaire interne ajouté en haut des pages regroupées pour naviguer entre les anciennes sections
+- Simplification de la navbar : Présentation professionnelle, Mes formations, Présentation personnelle, Me contacter (plus de lien "Accueil" en doublon avec le logo de la barre)
