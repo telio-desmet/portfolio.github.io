@@ -1,16 +1,6 @@
-/* ============================================================
-   PORTFOLIO — Télio Desmet
-   Feuille de style principale (v10)
-   Direction : éditorial, sobre, une seule couleur d'accent.
-   Fond encre avec grain léger, typo sérif pour les titres,
-   filets fins, pas de dégradés ni de lueurs.
-   ============================================================ */
 
-/* ---------- Polices ---------- */
-/* Fraunces : titres sérif à caractère / JetBrains Mono : détails techniques */
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..700&family=JetBrains+Mono:wght@400;600&display=swap');
 
-/* ---------- Reset ---------- */
 *,
 *::before,
 *::after {
@@ -32,36 +22,33 @@ embed {
   display: none !important;
 }
 
-/* ---------- Design tokens ---------- */
 :root {
-  /* Couleurs du mode sombre — fond bordeaux / noir profond */
-  --accent-color: #d9a45b;              /* accent or (conservé) */
-  --accent-ink: #240808;                /* texte posé sur l'accent */
+  --accent-color: #d9a45b;
+  --accent-ink: #240808;
   --success-color: #7d7cb9;
   --warning-color: #d9a45b;
   --danger-color: #d1725f;
   --info-color: #7f9dc4;
 
-  --text-color: #ece0da;                /* papier légèrement rosé */
+  --text-color: #ece0da;
   --text-secondary: #a59290;
 
-  --bg-solid: #0e090b;                  /* noir très profond, nuance bordeaux */
-  --bg-gradient: var(--bg-solid);       /* conservé pour compat */
+  --bg-solid: #0e090b;
+  --bg-gradient: var(--bg-solid);
   --surface: rgba(255, 255, 255, .03);
   --surface-strong: rgba(11, 6, 8, .92);
-  --card-bg: #190f13;                   /* surface bordeaux sombre */
+  --card-bg: #190f13;
   --glass-bg: #190f13;
   --glass-border: rgba(240, 222, 225, .09);
   --shadow-color: rgba(4, 2, 3, .5);
 
-  /* Fondu du résumé tronqué (cartes de veille) */
+
   --card-fade: rgba(25, 15, 19, .97);
-  --spotlight-tint: rgba(217, 164, 91, .05);   /* voile doré sous la souris */
+  --spotlight-tint: rgba(217, 164, 91, .05);
 
-  /* Filet signature : un simple trait plein d'accent */
-  --gradient: var(--accent-color);      /* conservé pour compat */
+  --gradient: var(--accent-color);
 
-  /* Géométrie & mouvements */
+
   --border-radius: 10px;
   --border-radius-sm: 8px;
   --nav-radius: 6px;
@@ -69,13 +56,11 @@ embed {
   --transition-fast: all .15s ease;
   --transition-bounce: all .3s cubic-bezier(.22, 1, .36, 1);
 
-  /* Typographie */
   --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
   --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
-/* ---------- Design tokens du mode clair (papier) ---------- */
 html.light-mode {
   --accent-color: #a06a1c;
   --accent-ink: #fffaf0;
@@ -100,7 +85,6 @@ html.light-mode {
   --spotlight-tint: rgba(160, 106, 28, .05);
 }
 
-/* ---------- Forgé de base ---------- */
 html {
   font-size: 16px;
   scroll-behavior: smooth;
@@ -120,14 +104,12 @@ body {
   transition: color .35s ease, background .35s ease;
 }
 
-/* Entrepôt flex : la nav passe au-dessus du héros (ordre visuel) */
 .scroll-progress { order: 0; }
 nav.site-nav     { order: 1; }
 header.hero      { order: 2; }
 main             { order: 3; flex: 1; }
 footer           { order: 4; }
 
-/* Grain de papier très léger sur tout le fond */
 body::before {
   content: '';
   position: fixed;
@@ -138,7 +120,6 @@ body::before {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* Entrée de page : simple fondu (le rideau est géré par transitions.js) */
 body.page-enter { animation: pageFadeIn .55s ease .12s both; }
 
 @keyframes pageFadeIn {
@@ -146,7 +127,6 @@ body.page-enter { animation: pageFadeIn .55s ease .12s both; }
   to   { opacity: 1; }
 }
 
-/* Rideau de transition entre les pages */
 .page-curtain {
   position: fixed;
   inset: 0;
@@ -157,7 +137,6 @@ body.page-enter { animation: pageFadeIn .55s ease .12s both; }
   will-change: transform;
 }
 
-/* Liseré d'accent sur le bord mobile du rideau */
 .page-curtain::before,
 .page-curtain::after {
   content: '';
@@ -171,7 +150,6 @@ body.page-enter { animation: pageFadeIn .55s ease .12s both; }
 .page-curtain::before { top: 0; opacity: 0; }
 .page-curtain::after  { bottom: 0; opacity: 0; }
 
-/* Chargement : le rideau couvre, puis se soulève comme un store */
 .page-curtain.is-covering {
   transform: translateY(0);
   transition: none;
@@ -187,7 +165,6 @@ body.page-enter { animation: pageFadeIn .55s ease .12s both; }
   transition: opacity .2s ease;
 }
 
-/* Navigation : le rideau descend depuis le haut pour couvrir */
 .page-curtain.is-dropping {
   transform: translateY(0);
   transition: transform .45s cubic-bezier(.76, 0, .24, 1);
@@ -198,13 +175,11 @@ body.page-enter { animation: pageFadeIn .55s ease .12s both; }
   transition: opacity .2s ease;
 }
 
-/* Sélection de texte */
 ::selection {
   background: var(--accent-color);
   color: var(--accent-ink);
 }
 
-/* Barre de défilement : fine et neutre */
 ::-webkit-scrollbar { width: 9px; }
 
 ::-webkit-scrollbar-track {
@@ -219,10 +194,6 @@ body.page-enter { animation: pageFadeIn .55s ease .12s both; }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--text-secondary);
 }
-
-/* ============================================================
-   ÉLÉMENTS FIXES : progression, retour en haut, thème
-   ============================================================ */
 
 .scroll-progress {
   position: fixed;
@@ -290,7 +261,6 @@ body.page-enter { animation: pageFadeIn .55s ease .12s both; }
               transform .25s cubic-bezier(.22, 1, .36, 1);
 }
 
-/* Icône lune / soleil dessinée en CSS — pas d'emoji */
 .theme-toggle::before {
   content: '';
   width: 11px;
@@ -308,10 +278,6 @@ html.light-mode .theme-toggle::before {
   color: var(--accent-color);
   transform: translateY(-2px);
 }
-
-/* ============================================================
-   HERO (en-tête de page)
-   ============================================================ */
 
 header.hero {
   max-width: 1180px;
@@ -334,7 +300,6 @@ header.hero h1 {
   max-width: 21ch;
 }
 
-/* Curseur de l'effet machine à écrire (index) */
 h1[data-typewriter]::after {
   content: '';
   display: inline-block;
@@ -359,13 +324,12 @@ h1[data-typewriter][data-typing-done]::after {
   to { opacity: 0; }
 }
 
-/* Mots rotatifs sous le titre (index) */
 .rotating-words {
   position: relative;
   height: 1.8rem;
   margin-top: .9rem;
   overflow: hidden;
-  max-width: 34ch;
+  max-width: 60ch;
 }
 
 .rotating-words span {
@@ -392,10 +356,6 @@ h1[data-typewriter][data-typing-done]::after {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ============================================================
-   NAVIGATION — barre pleine largeur en haut de page
-   ============================================================ */
-
 nav.site-nav {
   position: sticky;
   top: 0;
@@ -403,8 +363,6 @@ nav.site-nav {
   width: 100%;
   max-width: none;
   margin: 0;
-  /* Contenu aligné sur la colonne principale (1180px), avec une
-     réserve à droite pour le bouton de thème flottant */
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -430,7 +388,6 @@ nav.site-nav.scrolled {
   box-shadow: 0 8px 24px var(--shadow-color);
 }
 
-/* Identité du site dans la barre (injectée par ui.js) */
 .nav-brand {
   display: flex;
   align-items: center;
@@ -516,7 +473,6 @@ nav.site-nav a {
   transition: color .18s ease;
 }
 
-/* Soulignement animé au survol */
 nav.site-nav a::after {
   content: '';
   position: absolute;
@@ -547,11 +503,11 @@ nav.site-nav a.active::after {
   transform: scaleX(1);
 }
 
-/* Bouton menu (mobile) */
 .nav-toggle {
   display: none;
   border: none;
   background: transparent;
+  /* Bouton menu (mobile) */
   width: 100%;
   padding: .55rem .9rem;
   cursor: pointer;
@@ -582,7 +538,6 @@ nav.site-nav.open .nav-toggle-bars span:nth-child(1) { transform: translateY(6px
 nav.site-nav.open .nav-toggle-bars span:nth-child(2) { opacity: 0; }
 nav.site-nav.open .nav-toggle-bars span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
-/* Sommaire interne d'une page (ancres) */
 .subnav {
   display: flex;
   flex-wrap: wrap;
@@ -612,10 +567,6 @@ nav.site-nav.open .nav-toggle-bars span:nth-child(3) { transform: translateY(-6p
   background: var(--card-bg);
 }
 
-/* ============================================================
-   STRUCTURE : main, sections, titres, contenus
-   ============================================================ */
-
 main {
   max-width: 1180px;
   width: 100%;
@@ -635,7 +586,6 @@ section {
   box-shadow: 0 1px 2px var(--shadow-color);
 }
 
-/* Filet d'accent discret en haut de chaque section */
 section::before {
   content: '';
   position: absolute;
@@ -646,7 +596,6 @@ section::before {
   background: var(--accent-color);
 }
 
-/* ==== Titres ==== */
 h2 {
   font-family: var(--font-display);
   font-size: clamp(1.45rem, 2.8vw, 1.9rem);
@@ -660,7 +609,6 @@ h2 {
   color: var(--text-color);
 }
 
-/* Trait accent sous les h2 : glisse quand la section apparaît */
 h2::after {
   content: '';
   position: absolute;
@@ -673,7 +621,6 @@ h2::after {
   transition: transform .55s cubic-bezier(.22, 1, .36, 1);
 }
 
-/* Animé uniquement quand le JS a ajouté .reveal à la section */
 section.reveal h2::after {
   transform: scaleX(0);
 }
@@ -716,7 +663,6 @@ a {
   color: var(--accent-color);
 }
 
-/* Liens courants : soulignement qui se dessine */
 p a,
 li a {
   color: var(--text-color);
@@ -763,7 +709,6 @@ ul.info-list li {
   transition: border-color .2s ease;
 }
 
-/* Petit carré d'accent au lieu d'une étoile décorative */
 ul.info-list li::before {
   content: '';
   width: 6px;
@@ -781,7 +726,6 @@ ul.info-list li p {
   margin: 0;
 }
 
-/* Utilitaires */
 .center {
   text-align: center;
 }
@@ -795,7 +739,6 @@ ul.info-list li p {
   margin-top: 1.8rem;
 }
 
-/* Encadré d'introduction / note discrète */
 .note {
   background: var(--surface);
   border: 1px solid var(--glass-border);
@@ -812,7 +755,6 @@ ul.info-list li p {
   font-size: .95rem;
 }
 
-/* Séparateur : filet + petit carré d'accent centré */
 .divider {
   height: 1px;
   background: var(--glass-border);
@@ -832,7 +774,6 @@ ul.info-list li p {
   border: 1px solid var(--accent-color);
 }
 
-/* Badges d'état : monospace, contour, sans point lumineux */
 .badge {
   display: inline-flex;
   align-items: center;
@@ -853,8 +794,6 @@ ul.info-list li p {
 .badge-wip  { color: var(--warning-color); }
 .badge-next { color: var(--info-color); }
 .badge-info { color: var(--info-color); }
-
-/* Puces "technologies" */
 .chips {
   display: flex;
   flex-wrap: wrap;
@@ -1556,6 +1495,23 @@ form textarea:focus {
 .embed-responsive embed {
   aspect-ratio: 610 / 855;
   height: 100%;
+}
+
+.embed-video {
+  width: 100%;
+  max-width: 380px;
+  margin: 1.3rem auto 1.5rem;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+}
+
+.embed-video iframe {
+  width: 100%;
+  aspect-ratio: 640 / 1088;
+  border: 0;
+  display: block;
+  background: var(--bg-solid);
 }
 
 .content-row {
